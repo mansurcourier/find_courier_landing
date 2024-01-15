@@ -1,0 +1,16 @@
+.header {
+  --height: 72px;
+
+  &__inner {
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 2px;
+  }
+
+  @media (max-width: 768px) {
+    --height: 48px;
+  }
+}

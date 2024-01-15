@@ -1,0 +1,183 @@
+.carousel {
+  padding-top: 60px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 328px;
+  column-gap: 24px;
+
+  @media (max-width: 1024px) {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr 268px;
+  }
+
+  @media (max-width: 567px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  &__left {
+    display: grid;
+    align-items: end;
+    //flex-direction: column;
+    //justify-content: end;
+    padding-bottom: 48px;
+    flex-grow: 1;
+
+    @media (max-width: 567px) {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: 24px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    display: block;
+
+    @media (max-width: 567px) {
+      max-width: 60%;
+    }
+  }
+
+  &__right {
+    //max-width: 324px;
+    //width: 100%;
+    //position: relative;
+    //overflow: hidden;
+    //padding-top: 12px;
+    //padding-left: 16px;
+    //box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      //max-width: 268px;
+    }
+
+    @media (max-width: 567px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__col {
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 12px;
+
+    @media (max-width: 920px) {
+      flex-direction: column;
+      row-gap: 12px;
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    //overflow: hidden;
+    //border-top-left-radius: 30px;
+    //border-top-right-radius: 30px;
+    //max-width: 303px;
+    //width: 100%;
+    //background-color: var(--light);
+
+    &::before {
+      background: url("../../../public/phone.png") no-repeat;
+      //content: "";
+      z-index: 100;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      //background-size: contain;
+    }
+
+    @media (max-width: 768px) {
+    }
+  }
+
+  &__item {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    //position: absolute;
+    position: relative;
+    top: 12px;
+    left: 10px;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item_title {
+    flex-grow: 1;
+    color: var(--light);
+    font-size: 44px;
+    font-weight: 500;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+      font-size: 34px;
+    }
+
+    @media (max-width: 810px) {
+      font-size: 24px;
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    column-gap: 12px;
+    z-index: 100;
+    margin-top: 32px;
+  }
+
+  &__arrow_btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.slider {
+  position: relative;
+  top: 6px;
+  //background-color: #f7f6fa;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+
+  @media (max-width: 767px) {
+    max-width: 268px;
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    display: block;
+  }
+
+  //&::before {
+  //  background: url("../../../public/phone.svg") no-repeat;
+  //  content: "";
+  //  z-index: 100;
+  //  position: absolute;
+  //  display: block;
+  //  top: 0;
+  //  left: 0;
+  //  right: 0;
+  //  bottom: 0;
+  //  //width: 100%;
+  //  //height: 100%;
+  //  //background-size: n;
+  //}
+}

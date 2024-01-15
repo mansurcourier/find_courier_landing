@@ -1,0 +1,25 @@
+.docs {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: 72px;
+  padding-top: 44px;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-row-gap: 16px;
+
+  &__link {
+    color: var(--primary-black);
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--primary-blue);
+    }
+  }
+}

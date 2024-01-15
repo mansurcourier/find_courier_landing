@@ -1,0 +1,10 @@
+.logo {
+  display: block;
+  text-decoration: none;
+
+  @media (max-width: 768px) {
+    svg {
+      width: 138px;
+    }
+  }
+}

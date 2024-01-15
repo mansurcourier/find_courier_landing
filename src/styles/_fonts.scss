@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Object Sans";
+  src: url("../assets/fonts/ObjectSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/ObjectSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Object Sans Slanted";
+  src: url("../assets/fonts/ObjectSans-Slanted.woff2") format("woff2"),
+    url("../assets/fonts/ObjectSans-Slanted.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Object Sans";
+  src: url("../assets/fonts/ObjectSans-Heavy.woff2") format("woff2"),
+    url("../assets/fonts/ObjectSans-Heavy.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Object Sans";
+  src: url("../assets/fonts/ObjectSans-HeavySlanted.woff2") format("woff2"),
+    url("../assets/fonts/ObjectSans-HeavySlanted.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
