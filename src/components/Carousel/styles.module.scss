@@ -161,11 +161,11 @@
   position: absolute;
   //top: 6px;
   //background-color: #f7f6fa;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-radius: 30px;
+  //border-top-right-radius: 30px;
   max-width: 303px;
   overflow: hidden;
-  top: 14px;
+  top: 13px;
   bottom: 0;
   right: 13px;
   height: 100%;
@@ -197,5 +197,7 @@
   //}
 
   &__item {
+    border-radius: 30px;
+    overflow: hidden;
   }
 }

@@ -26,7 +26,7 @@ const Carousel = () => {
             <br />
             доставить
           </h2>
-          <CarouselArrows onPrev={onPrev} onNext={onNext} />
+          {/*<CarouselArrows onPrev={onPrev} onNext={onNext} />*/}
         </div>
         <div className={styles.carousel__col}>
           <div className={styles.carousel__buttons}>
@@ -175,12 +175,12 @@ const Carousel = () => {
               <div className={styles.slider__item}>
                 <img src="s1.png" alt="" className={styles.carousel__image} />
               </div>
-              <div className={styles.slider__item}>
-                <img src="s2.png" alt="" className={styles.carousel__image} />
-              </div>
-              <div className={styles.slider__item}>
-                <img src="s3.png" alt="" className={styles.carousel__image} />
-              </div>
+              {/*<div className={styles.slider__item}>*/}
+              {/*  <img src="s2.png" alt="" className={styles.carousel__image} />*/}
+              {/*</div>*/}
+              {/*<div className={styles.slider__item}>*/}
+              {/*  <img src="s3.png" alt="" className={styles.carousel__image} />*/}
+              {/*</div>*/}
             </Slider>
           </div>
         </div>
