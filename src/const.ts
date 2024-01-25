@@ -16,11 +16,11 @@ export const nav = [
     label: "Запрещено к пересылке",
   },
   {
-    id: "offerta",
+    id: "personalProcess",
     label: "Согласие на обработку",
   },
   {
-    id: "offerta",
+    id: "reklama",
     label: "Согласие на рекламу для зарегистрированных посетителей",
   },
 ];

@@ -9,10 +9,23 @@
 
 :root {
   --extra-light-blue: #327aff;
+  --extra-light-grey: #f7f6fa;
   --extra-bluegrey: #ebedfd;
   --primary-black: #282141;
   --primary-blue: #364fec;
   --light: #fff;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -57,4 +70,8 @@ body {
 .swiper-button-disabled {
   opacity: 0.2;
   cursor: default;
+}
+
+.blue {
+  background-color: var(--extra-light-grey);
 }

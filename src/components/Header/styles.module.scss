@@ -10,6 +10,10 @@
     top: 2px;
   }
 
+  &--blue {
+    background-color: var(--extra-light-blue);
+  }
+
   @media (max-width: 768px) {
     --height: 48px;
   }

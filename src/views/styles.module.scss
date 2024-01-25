@@ -15,11 +15,32 @@
   &__link {
     color: var(--primary-black);
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: none;
 
     &:hover {
       color: var(--primary-blue);
     }
+  }
+
+  &__link_active {
+    color: var(--primary-blue);
+  }
+}
+
+.main {
+  font-size: 12px;
+  line-height: 14px;
+
+  h1 {
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 14px;
   }
 }
