@@ -34,6 +34,7 @@ const Carousel = () => {
               <a
                 href="https://apps.apple.com/us/app/findcourier/id6471444446"
                 target="_blank"
+                style={{ display: "block" }}
               >
                 <MarketplaceButton>
                   <svg
