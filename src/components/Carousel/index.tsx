@@ -1,10 +1,10 @@
 import Slider from "react-slick";
 import { isIOS, isAndroid } from "react-device-detect";
 import MarketplaceButton from "../MarketplaceButton";
-import styles from "./styles.module.scss";
 import "slick-carousel/slick/slick.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useRef } from "react";
+import styles from "./styles.module.scss";
 
 const Carousel = () => {
   const ref = useRef<Slider>(null);
