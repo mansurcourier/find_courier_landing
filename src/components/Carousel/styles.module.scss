@@ -71,10 +71,24 @@
   }
 
   &__button {
-    flex: 1;
     background-color: transparent;
-    border: 0;
     outline: none;
+    border-radius: 24px;
+    cursor: pointer;
+    height: 48px;
+    border: 1px solid var(--extra-bluegrey);
+    padding-left: 10px;
+    padding-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 11px;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #5692ff;
+    }
   }
 
   &__item {
@@ -196,4 +210,9 @@
     border-top-right-radius: 50px;
     overflow: hidden;
   }
+}
+
+.sliderTitles {
+  max-width: 640px;
+  margin-left: 0 !important;
 }
