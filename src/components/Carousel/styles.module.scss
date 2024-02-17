@@ -108,6 +108,9 @@
 
     @media (max-width: 768px) {
     }
+
+    @media (max-width: 576px) {
+    }
   }
 
   &__item {
@@ -188,6 +191,10 @@
 
   @media (max-width: 767px) {
     max-width: 268px;
+  }
+
+  @media (max-width: 576px) {
+    top: 0;
   }
 
   img {

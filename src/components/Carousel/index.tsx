@@ -173,19 +173,17 @@ const Carousel = () => {
         {isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
         {/*<img src="phone.png" alt="" className={styles.carousel__phone} />*/}
 
-        <div>
-          <Swiper ref={ref} className={styles.slider}>
-            <SwiperSlide className={styles.slider__item}>
-              <img src="s1.png" alt="" className={styles.carousel__image} />
-            </SwiperSlide>
-            <SwiperSlide className={styles.slider__item}>
-              <img src="s2.png" alt="" className={styles.carousel__image} />
-            </SwiperSlide>
-            <SwiperSlide className={styles.slider__item}>
-              <img src="s3.png" alt="" className={styles.carousel__image} />
-            </SwiperSlide>
-          </Swiper>
-        </div>
+        <Swiper ref={ref} className={styles.slider}>
+          <SwiperSlide className={styles.slider__item}>
+            <img src="s1.png" alt="" className={styles.carousel__image} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider__item}>
+            <img src="s2.png" alt="" className={styles.carousel__image} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider__item}>
+            <img src="s3.png" alt="" className={styles.carousel__image} />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
