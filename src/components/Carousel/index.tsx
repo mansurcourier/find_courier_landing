@@ -18,12 +18,6 @@ const Carousel = () => {
   const ref2 = useRef<SwiperRef>(null);
   const isMobile = useMediaQuery("(max-width: 567px)");
 
-  useEffect(() => {
-    if (ref?.current?.swiper?.autoplay.running) {
-      ref2?.current?.swiper?.autoplay.start();
-    }
-  }, [ref?.current?.swiper?.autoplay.running]);
-
   const handleDownload = () => {
     axios
       .get("https://findcourier.ru/public/findcourier.apk", {
@@ -48,45 +42,50 @@ const Carousel = () => {
     <div className={styles.carousel}>
       <div className={styles.carousel__left}>
         <div className={styles.carousel__col}>
-          <Swiper
-            className={styles.sliderTitles}
-            ref={ref2}
-            loop
-            // autoplay={{
-            //   delay: 3000,
-            //   waitForTransition: 0,
-            //   disableOnInteraction: false,
-            // }}
-            modules={[Autoplay]}
-          >
-            <SwiperSlide>
-              <h2 className={styles.carousel__item_title}>
-                Находите подходящий груз, который вы готовы
-                <br />
-                доставить
-              </h2>
-            </SwiperSlide>
-            <SwiperSlide>
-              <h2 className={styles.carousel__item_title}>
-                Отслеживайте
-                <br />
-                новые посылки
-                <br />
-                по направлениям
-              </h2>
-            </SwiperSlide>
-            <SwiperSlide>
-              <h2 className={styles.carousel__item_title}>
-                Выбирайте надежного
-                <br />
-                курьера, который
-                <br />
-                в срок доставит
-                <br />
-                ваш груз
-              </h2>
-            </SwiperSlide>
-          </Swiper>
+          <h2 className={styles.carousel__item_title}>
+            Находите подходящий груз, который вы готовы
+            <br />
+            доставить
+          </h2>
+          {/*<Swiper*/}
+          {/*  className={styles.sliderTitles}*/}
+          {/*  ref={ref2}*/}
+          {/*  loop*/}
+          {/*  autoplay={{*/}
+          {/*    delay: 3000,*/}
+          {/*    waitForTransition: 0,*/}
+          {/*    disableOnInteraction: false,*/}
+          {/*  }}*/}
+          {/*  modules={[Autoplay]}*/}
+          {/*>*/}
+          {/*  <SwiperSlide>*/}
+          {/*    <h2 className={styles.carousel__item_title}>*/}
+          {/*      Находите подходящий груз, который вы готовы*/}
+          {/*      <br />*/}
+          {/*      доставить*/}
+          {/*    </h2>*/}
+          {/*  </SwiperSlide>*/}
+          {/*  <SwiperSlide>*/}
+          {/*    <h2 className={styles.carousel__item_title}>*/}
+          {/*      Отслеживайте*/}
+          {/*      <br />*/}
+          {/*      новые посылки*/}
+          {/*      <br />*/}
+          {/*      по направлениям*/}
+          {/*    </h2>*/}
+          {/*  </SwiperSlide>*/}
+          {/*  <SwiperSlide>*/}
+          {/*    <h2 className={styles.carousel__item_title}>*/}
+          {/*      Выбирайте надежного*/}
+          {/*      <br />*/}
+          {/*      курьера, который*/}
+          {/*      <br />*/}
+          {/*      в срок доставит*/}
+          {/*      <br />*/}
+          {/*      ваш груз*/}
+          {/*    </h2>*/}
+          {/*  </SwiperSlide>*/}
+          {/*</Swiper>*/}
           {!isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
         </div>
         <div className={styles.carousel__col}>
@@ -227,10 +226,13 @@ const Carousel = () => {
       <div className={styles.carousel__right}>
         {isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
 
+        <div className={styles.bg}></div>
+
         <Swiper
           ref={ref}
           className={styles.slider}
           loop
+          spaceBetween={0}
           autoplay={{
             delay: 3000,
             waitForTransition: 0,
