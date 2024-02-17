@@ -2,20 +2,21 @@ import Slider from "react-slick";
 import { isIOS, isAndroid } from "react-device-detect";
 import MarketplaceButton from "../MarketplaceButton";
 import "slick-carousel/slick/slick.css";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import "swiper/css";
+import CarouselArrows from "./CarouselArrows";
 
 const Carousel = () => {
-  const ref = useRef<Slider>(null);
+  const ref = useRef<SwiperRef>(null);
 
   const onPrev = () => {
-    ref?.current?.slickPrev();
+    ref?.current?.swiper?.slidePrev();
   };
 
   const onNext = () => {
-    ref?.current?.slickNext();
+    ref?.current?.swiper?.slideNext();
   };
 
   return (
@@ -27,7 +28,7 @@ const Carousel = () => {
             <br />
             доставить
           </h2>
-          {/*<CarouselArrows onPrev={onPrev} onNext={onNext} />*/}
+          <CarouselArrows onPrev={onPrev} onNext={onNext} />
         </div>
         <div className={styles.carousel__col}>
           <div className={styles.carousel__buttons}>
