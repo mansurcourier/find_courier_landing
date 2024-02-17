@@ -30,7 +30,7 @@
     @media (max-width: 567px) {
       display: flex;
       flex-direction: column-reverse;
-      row-gap: 24px;
+      row-gap: 46px;
     }
   }
 
@@ -132,6 +132,7 @@
     font-size: 44px;
     font-weight: 500;
     margin: 0;
+    font-family: "Object Sans", serif;
 
     @media (max-width: 1024px) {
       font-size: 34px;
