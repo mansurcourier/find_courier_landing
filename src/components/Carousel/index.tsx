@@ -18,7 +18,7 @@ const Carousel = () => {
 
   const handleDownload = () => {
     axios
-      .get("https://findcourier.ru/findourier.apk", {
+      .get("https://findcourier.ru/public/findcourier.apk", {
         responseType: "blob",
       })
       .then((res) => {
