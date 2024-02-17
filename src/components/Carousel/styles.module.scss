@@ -215,4 +215,9 @@
 .sliderTitles {
   max-width: 640px;
   margin-left: 0 !important;
+
+  @media (max-width: 567px) {
+    max-width: 480px;
+    margin: 0 auto !important;
+  }
 }
