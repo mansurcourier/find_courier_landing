@@ -18,6 +18,15 @@ const Carousel = () => {
   const ref2 = useRef<SwiperRef>(null);
   const isMobile = useMediaQuery("(max-width: 567px)");
 
+  useEffect(() => {
+    const gallerySwiper = ref?.current?.swiper;
+    const thumbnailSwiper = ref2?.current?.swiper;
+    if (gallerySwiper.controller && thumbnailSwiper.controller) {
+      gallerySwiper.controller.control = thumbnailSwiper;
+      thumbnailSwiper.controller.control = gallerySwiper;
+    }
+  }, []);
+
   const handleDownload = () => {
     axios
       .get("https://findcourier.ru/public/findcourier.apk", {
