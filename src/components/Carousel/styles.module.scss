@@ -142,8 +142,8 @@
 
 .slider {
   position: relative;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  //border-top-left-radius: 50px;
+  //border-top-right-radius: 50px;
   //background-color: #fff;
   overflow: hidden;
 
@@ -151,6 +151,8 @@
     content: "";
     display: block;
     background-color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     position: absolute;
     left: 12px;
     top: 0;
@@ -190,5 +192,8 @@
 
   &__item {
     position: relative;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    overflow: hidden;
   }
 }
