@@ -19,7 +19,6 @@ const Carousel = () => {
   const isMobile = useMediaQuery("(max-width: 567px)");
 
   useEffect(() => {
-    ref?.current?.swiper?.autoplay.start();
     if (ref?.current?.swiper?.autoplay.running) {
       ref2?.current?.swiper?.autoplay.start();
     }
@@ -232,11 +231,11 @@ const Carousel = () => {
           ref={ref}
           className={styles.slider}
           loop
-          // autoplay={{
-          //   delay: 3000,
-          //   waitForTransition: 0,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 3000,
+            waitForTransition: 0,
+            disableOnInteraction: false,
+          }}
           modules={[Autoplay]}
         >
           <SwiperSlide className={styles.slider__item}>
