@@ -19,9 +19,10 @@ const Carousel = () => {
   const isMobile = useMediaQuery("(max-width: 567px)");
 
   useEffect(() => {
-    ref?.current?.swiper?.autoplay.start();
-    ref2?.current?.swiper?.autoplay.start();
-  }, []);
+    if (ref2?.current?.swiper?.autoplay.running) {
+      ref?.current?.swiper?.autoplay.start();
+    }
+  }, [ref2?.current?.swiper?.autoplay.running]);
 
   const handleDownload = () => {
     axios
