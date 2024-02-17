@@ -167,7 +167,7 @@ const Carousel = () => {
       </div>
       <div className={styles.carousel__right}>
         <div style={{ position: "relative" }}>
-          <img src="iphone.png" alt="" className={styles.carousel__phone} />
+          <img src="phone.png" alt="" className={styles.carousel__phone} />
 
           <div className={styles.slider}>
             <Slider
