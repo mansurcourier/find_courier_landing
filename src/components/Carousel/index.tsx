@@ -1,4 +1,5 @@
-import Slider from "react-slick";
+import { Autoplay } from "swiper/modules";
+
 import { isIOS, isAndroid } from "react-device-detect";
 import MarketplaceButton from "../MarketplaceButton";
 import "slick-carousel/slick/slick.css";
@@ -6,6 +7,7 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import "swiper/css";
+import "swiper/css/autoplay";
 import axios from "axios";
 import fileDownload from "js-file-download";
 import CarouselArrows from "./CarouselArrows";
@@ -190,7 +192,15 @@ const Carousel = () => {
       <div className={styles.carousel__right}>
         {isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
 
-        <Swiper ref={ref} className={styles.slider} loop autoplay>
+        <Swiper
+          ref={ref}
+          className={styles.slider}
+          loop
+          autoplay={{
+            delay: 3000,
+          }}
+          modules={[Autoplay]}
+        >
           <SwiperSlide className={styles.slider__item}>
             <img src="s1.png" alt="" className={styles.carousel__image} />
           </SwiperSlide>

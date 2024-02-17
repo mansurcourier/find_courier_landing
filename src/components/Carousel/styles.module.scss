@@ -129,6 +129,7 @@
     cursor: pointer;
     padding: 0;
     margin: 0;
+    outline: none;
   }
 
   &__phone {
@@ -145,7 +146,6 @@
   border-top-left-radius: 42px;
   border-top-right-radius: 42px;
   //background-color: #fff;
-  overflow: hidden;
 
   &::after {
     content: "";
