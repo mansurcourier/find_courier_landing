@@ -73,6 +73,9 @@
 
   &__button {
     flex: 1;
+    background-color: transparent;
+    border: 0;
+    outline: none;
   }
 
   &__item {

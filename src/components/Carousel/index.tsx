@@ -6,6 +6,8 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import "swiper/css";
+import axios from "axios";
+import fileDownload from "js-file-download";
 import CarouselArrows from "./CarouselArrows";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
@@ -13,6 +15,16 @@ const Carousel = () => {
   const ref = useRef<SwiperRef>(null);
   const ref2 = useRef<SwiperRef>(null);
   const isMobile = useMediaQuery("(max-width: 567px)");
+
+  const handleDownload = () => {
+    axios
+      .get("https://findcourier.ru/findourier.apk", {
+        responseType: "blob",
+      })
+      .then((res) => {
+        fileDownload(res.data, "findourier.apk");
+      });
+  };
 
   const onPrev = () => {
     ref?.current?.swiper?.slidePrev();
@@ -106,9 +118,8 @@ const Carousel = () => {
               </a>
             )}
             {!isIOS && (
-              <a
-                href="https://findcourier.ru/findourier.apk"
-                target="_blank"
+              <button
+                onClick={handleDownload}
                 className={styles.carousel__button}
               >
                 <MarketplaceButton>
@@ -171,7 +182,7 @@ const Carousel = () => {
                     <rect x="16" y="4" width="2" height="2" fill="white" />
                   </svg>
                 </MarketplaceButton>
-              </a>
+              </button>
             )}
           </div>
         </div>
