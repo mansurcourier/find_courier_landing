@@ -11,14 +11,17 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Carousel = () => {
   const ref = useRef<SwiperRef>(null);
-  const isMobile = useMediaQuery("(max-width:576px)");
+  const ref2 = useRef<SwiperRef>(null);
+  const isMobile = useMediaQuery("(max-width: 567px)");
 
   const onPrev = () => {
     ref?.current?.swiper?.slidePrev();
+    ref2?.current?.swiper?.slidePrev();
   };
 
   const onNext = () => {
     ref?.current?.swiper?.slideNext();
+    ref2?.current?.swiper?.slideNext();
   };
 
   return (
@@ -171,9 +174,8 @@ const Carousel = () => {
       </div>
       <div className={styles.carousel__right}>
         {isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
-        {/*<img src="phone.png" alt="" className={styles.carousel__phone} />*/}
 
-        <Swiper ref={ref} className={styles.slider}>
+        <Swiper ref={ref} className={styles.slider} loop autoplay>
           <SwiperSlide className={styles.slider__item}>
             <img src="s1.png" alt="" className={styles.carousel__image} />
           </SwiperSlide>
