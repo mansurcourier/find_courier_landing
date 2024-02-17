@@ -54,7 +54,7 @@ const Carousel = () => {
             autoplay={{
               delay: 3000,
               waitForTransition: 0,
-              disableOnInteraction: true,
+              disableOnInteraction: false,
             }}
             modules={[Autoplay]}
           >
@@ -233,7 +233,7 @@ const Carousel = () => {
           autoplay={{
             delay: 3000,
             waitForTransition: 0,
-            disableOnInteraction: true,
+            disableOnInteraction: false,
           }}
           modules={[Autoplay]}
         >
