@@ -19,12 +19,8 @@ const Carousel = () => {
   const isMobile = useMediaQuery("(max-width: 567px)");
 
   useEffect(() => {
-    const gallerySwiper = ref?.current?.swiper;
-    const thumbnailSwiper = ref2?.current?.swiper;
-    if (gallerySwiper.controller && thumbnailSwiper.controller) {
-      gallerySwiper.controller.control = thumbnailSwiper;
-      thumbnailSwiper.controller.control = gallerySwiper;
-    }
+    ref?.current?.swiper?.autoplay.start();
+    ref2?.current?.swiper?.autoplay.start();
   }, []);
 
   const handleDownload = () => {
@@ -58,7 +54,7 @@ const Carousel = () => {
             autoplay={{
               delay: 3000,
               waitForTransition: 0,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
             modules={[Autoplay]}
           >
@@ -237,7 +233,7 @@ const Carousel = () => {
           autoplay={{
             delay: 3000,
             waitForTransition: 0,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
           }}
           modules={[Autoplay]}
         >
