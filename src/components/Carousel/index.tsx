@@ -51,11 +51,11 @@ const Carousel = () => {
             className={styles.sliderTitles}
             ref={ref2}
             loop
-            autoplay={{
-              delay: 3000,
-              waitForTransition: 0,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 3000,
+            //   waitForTransition: 0,
+            //   disableOnInteraction: false,
+            // }}
             modules={[Autoplay]}
           >
             <SwiperSlide>
@@ -230,11 +230,11 @@ const Carousel = () => {
           ref={ref}
           className={styles.slider}
           loop
-          autoplay={{
-            delay: 3000,
-            waitForTransition: 0,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 3000,
+          //   waitForTransition: 0,
+          //   disableOnInteraction: false,
+          // }}
           modules={[Autoplay]}
         >
           <SwiperSlide className={styles.slider__item}>
