@@ -106,7 +106,11 @@ const Carousel = () => {
               </a>
             )}
             {!isIOS && (
-              <a href="#" target="_blank" className={styles.carousel__button}>
+              <a
+                href="https://findcourier.ru/findourier.apk"
+                target="_blank"
+                className={styles.carousel__button}
+              >
                 <MarketplaceButton>
                   <svg
                     width="144"
