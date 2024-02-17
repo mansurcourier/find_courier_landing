@@ -7,9 +7,11 @@ import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import "swiper/css";
 import CarouselArrows from "./CarouselArrows";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Carousel = () => {
   const ref = useRef<SwiperRef>(null);
+  const isMobile = useMediaQuery("(max-width:576px)");
 
   const onPrev = () => {
     ref?.current?.swiper?.slidePrev();
@@ -28,7 +30,7 @@ const Carousel = () => {
             <br />
             доставить
           </h2>
-          <CarouselArrows onPrev={onPrev} onNext={onNext} />
+          {!isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
         </div>
         <div className={styles.carousel__col}>
           <div className={styles.carousel__buttons}>
@@ -168,6 +170,7 @@ const Carousel = () => {
         </div>
       </div>
       <div className={styles.carousel__right}>
+        {isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
         {/*<img src="phone.png" alt="" className={styles.carousel__phone} />*/}
 
         <Swiper ref={ref} className={styles.slider}>
