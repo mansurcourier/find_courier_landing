@@ -165,17 +165,13 @@
 .slider {
   //position: absolute;
   overflow: hidden;
+  position: relative;
+  top: 124px;
   //top: 6px;
   //background-color: #f7f6fa;
   //border-radius: 30px;
   //border-top-right-radius: 30px;
-  max-width: 303px;
-  overflow: hidden;
-  top: 13px;
   bottom: 0;
-  right: 13px;
-  height: 100%;
-  width: 100%;
 
   @media (max-width: 767px) {
     max-width: 268px;
@@ -188,7 +184,8 @@
   }
 
   &__item {
-    //border-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     overflow: hidden;
   }
 }

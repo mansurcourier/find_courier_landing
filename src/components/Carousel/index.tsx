@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
+import "swiper/css";
 
 const Carousel = () => {
   const ref = useRef<Slider>(null);
@@ -171,6 +172,12 @@ const Carousel = () => {
         <Swiper ref={ref} className={styles.slider}>
           <SwiperSlide className={styles.slider__item}>
             <img src="s1.png" alt="" className={styles.carousel__image} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider__item}>
+            <img src="s2.png" alt="" className={styles.carousel__image} />
+          </SwiperSlide>
+          <SwiperSlide className={styles.slider__item}>
+            <img src="s3.png" alt="" className={styles.carousel__image} />
           </SwiperSlide>
         </Swiper>
       </div>
