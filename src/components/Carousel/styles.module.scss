@@ -1,6 +1,6 @@
 .carousel {
   padding-top: 60px;
-  position: relative;
+  //position: relative;
   display: grid;
   grid-template-columns: 1fr 328px;
   column-gap: 24px;
@@ -93,7 +93,7 @@
       background: url("../../../public/phone.png") no-repeat;
       //content: "";
       z-index: 100;
-      position: absolute;
+      //position: absolute;
       display: block;
       top: 0;
       left: 0;
@@ -163,7 +163,7 @@
 }
 
 .slider {
-  position: absolute;
+  //position: absolute;
   overflow: hidden;
   //top: 6px;
   //background-color: #f7f6fa;

@@ -166,32 +166,13 @@ const Carousel = () => {
         </div>
       </div>
       <div className={styles.carousel__right}>
-        <div style={{ position: "relative" }}>
-          <img src="phone.png" alt="" className={styles.carousel__phone} />
+        {/*<img src="phone.png" alt="" className={styles.carousel__phone} />*/}
 
-          <div className={styles.slider}>
-            <Slider
-              ref={ref}
-              {...{
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                infinite: false,
-              }}
-            >
-              <div className={styles.slider__item}>
-                <img src="s1.png" alt="" className={styles.carousel__image} />
-              </div>
-              {/*<div className={styles.slider__item}>*/}
-              {/*  <img src="s2.png" alt="" className={styles.carousel__image} />*/}
-              {/*</div>*/}
-              {/*<div className={styles.slider__item}>*/}
-              {/*  <img src="s3.png" alt="" className={styles.carousel__image} />*/}
-              {/*</div>*/}
-            </Slider>
-          </div>
-        </div>
+        <Swiper ref={ref} className={styles.slider}>
+          <SwiperSlide className={styles.slider__item}>
+            <img src="s1.png" alt="" className={styles.carousel__image} />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
