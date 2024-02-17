@@ -60,6 +60,7 @@
     @media (max-width: 567px) {
       display: flex;
       justify-content: center;
+      margin-top: -124px;
     }
   }
 
@@ -155,7 +156,7 @@
     @media (max-width: 576px) {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      //transform: translateY(calc(-50%));
       justify-content: space-between;
       width: 100%;
     }
@@ -194,7 +195,7 @@
   }
 
   @media (max-width: 576px) {
-    top: 0;
+    //top: 0;
   }
 
   img {
