@@ -28,64 +28,48 @@ const Carousel = () => {
       });
   };
 
-  const onPrev = () => {
-    ref?.current?.swiper?.slidePrev();
-    ref2?.current?.swiper?.slidePrev();
-  };
-
-  const onNext = () => {
-    ref?.current?.swiper?.slideNext();
-    ref2?.current?.swiper?.slideNext();
-  };
-
   return (
     <div className={styles.carousel}>
       <div className={styles.carousel__left}>
         <div className={styles.carousel__col}>
-          <h2 className={styles.carousel__item_title}>
-            Находите подходящий груз, который вы готовы
-            <br />
-            доставить
-          </h2>
-          {/*<Swiper*/}
-          {/*  className={styles.sliderTitles}*/}
-          {/*  ref={ref2}*/}
-          {/*  loop*/}
-          {/*  autoplay={{*/}
-          {/*    delay: 3000,*/}
-          {/*    waitForTransition: 0,*/}
-          {/*    disableOnInteraction: false,*/}
-          {/*  }}*/}
-          {/*  modules={[Autoplay]}*/}
-          {/*>*/}
-          {/*  <SwiperSlide>*/}
-          {/*    <h2 className={styles.carousel__item_title}>*/}
-          {/*      Находите подходящий груз, который вы готовы*/}
-          {/*      <br />*/}
-          {/*      доставить*/}
-          {/*    </h2>*/}
-          {/*  </SwiperSlide>*/}
-          {/*  <SwiperSlide>*/}
-          {/*    <h2 className={styles.carousel__item_title}>*/}
-          {/*      Отслеживайте*/}
-          {/*      <br />*/}
-          {/*      новые посылки*/}
-          {/*      <br />*/}
-          {/*      по направлениям*/}
-          {/*    </h2>*/}
-          {/*  </SwiperSlide>*/}
-          {/*  <SwiperSlide>*/}
-          {/*    <h2 className={styles.carousel__item_title}>*/}
-          {/*      Выбирайте надежного*/}
-          {/*      <br />*/}
-          {/*      курьера, который*/}
-          {/*      <br />*/}
-          {/*      в срок доставит*/}
-          {/*      <br />*/}
-          {/*      ваш груз*/}
-          {/*    </h2>*/}
-          {/*  </SwiperSlide>*/}
-          {/*</Swiper>*/}
+          <Swiper
+            className={styles.sliderTitles}
+            ref={ref2}
+            loop
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+          >
+            <SwiperSlide>
+              <h2 className={styles.carousel__item_title}>
+                Находите подходящий груз, который вы готовы
+                <br />
+                доставить
+              </h2>
+            </SwiperSlide>
+            <SwiperSlide>
+              <h2 className={styles.carousel__item_title}>
+                Отслеживайте
+                <br />
+                новые посылки
+                <br />
+                по направлениям
+              </h2>
+            </SwiperSlide>
+            <SwiperSlide>
+              <h2 className={styles.carousel__item_title}>
+                Выбирайте надежного
+                <br />
+                курьера, который
+                <br />
+                в срок доставит
+                <br />
+                ваш груз
+              </h2>
+            </SwiperSlide>
+          </Swiper>
           {/*{!isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}*/}
         </div>
         <div className={styles.carousel__col}>
@@ -232,10 +216,8 @@ const Carousel = () => {
           ref={ref}
           className={styles.slider}
           loop
-          spaceBetween={0}
           autoplay={{
             delay: 3000,
-            waitForTransition: 0,
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}

@@ -115,11 +115,15 @@
     font-family: "Object Sans", serif;
 
     @media (max-width: 1024px) {
-      font-size: 34px;
+      //font-size: 44px;
     }
 
     @media (max-width: 810px) {
-      font-size: 24px;
+      font-size: 34px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 28px;
     }
   }
 
@@ -218,8 +222,16 @@
   max-width: 640px;
   margin-left: 0 !important;
 
+  @media (max-width: 1024px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 300px;
+  }
+
   @media (max-width: 567px) {
-    max-width: 480px;
+    max-width: 420px;
     margin: 0 auto !important;
   }
 
