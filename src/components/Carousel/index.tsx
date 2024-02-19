@@ -86,7 +86,7 @@ const Carousel = () => {
           {/*    </h2>*/}
           {/*  </SwiperSlide>*/}
           {/*</Swiper>*/}
-          {!isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
+          {/*{!isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}*/}
         </div>
         <div className={styles.carousel__col}>
           <div className={styles.carousel__buttons}>
@@ -224,7 +224,7 @@ const Carousel = () => {
         </div>
       </div>
       <div className={styles.carousel__right}>
-        {isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}
+        {/*{isMobile && <CarouselArrows onPrev={onPrev} onNext={onNext} />}*/}
 
         <div className={styles.bg}></div>
 
