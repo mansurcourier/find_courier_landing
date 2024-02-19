@@ -219,20 +219,21 @@ const Carousel = () => {
           loop
           noSwiping={true}
           allowTouchMove={false}
+          slidesPerView={1}
           autoplay={{
             delay: 3000,
           }}
           modules={[Autoplay]}
         >
-          <SwiperSlide className={styles.slider__item}>
-            <img src="s1.png" alt="" className={styles.carousel__image} />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slider__item}>
-            <img src="s2.png" alt="" className={styles.carousel__image} />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slider__item}>
-            <img src="s3.png" alt="" className={styles.carousel__image} />
-          </SwiperSlide>
+          {[1, 2, 3].map((i) => (
+            <SwiperSlide key={i} className={styles.slider__item}>
+              <img
+                src={`s${i}.png`}
+                alt=""
+                className={styles.carousel__image}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

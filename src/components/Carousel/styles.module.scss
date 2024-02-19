@@ -44,12 +44,9 @@
   &__right {
     position: relative;
 
-    @media (max-width: 768px) {
-    }
-
     @media (max-width: 567px) {
-      display: flex;
-      justify-content: center;
+      //display: g;
+      //justify-content: center;
     }
   }
 
