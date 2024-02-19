@@ -141,9 +141,8 @@ const Carousel = () => {
               </a>
             )}
             {!isIOS && (
-              <a
-                href="https://findcourier.ru/findcourier.apk"
-                target="_blank"
+              <button
+                onClick={handleDownload}
                 className={styles.carousel__button}
               >
                 <svg
@@ -204,7 +203,7 @@ const Carousel = () => {
                   <rect x="4" y="4" width="2" height="2" fill="white" />
                   <rect x="16" y="4" width="2" height="2" fill="white" />
                 </svg>
-              </a>
+              </button>
             )}
           </div>
         </div>
