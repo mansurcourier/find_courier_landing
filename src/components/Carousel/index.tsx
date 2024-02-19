@@ -40,7 +40,6 @@ const Carousel = () => {
             loop
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
             }}
             modules={[Autoplay]}
           >
@@ -222,7 +221,6 @@ const Carousel = () => {
           allowTouchMove={false}
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false,
           }}
           modules={[Autoplay]}
         >
