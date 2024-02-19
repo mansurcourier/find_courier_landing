@@ -34,6 +34,7 @@ const Carousel = () => {
         <div className={styles.carousel__col}>
           <Swiper
             className={styles.sliderTitles}
+            allowTouchMove={false}
             ref={ref2}
             noSwiping={true}
             loop
@@ -218,6 +219,7 @@ const Carousel = () => {
           className={styles.slider}
           loop
           noSwiping={true}
+          allowTouchMove={false}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
