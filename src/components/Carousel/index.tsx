@@ -142,7 +142,7 @@ const Carousel = () => {
             )}
             {!isIOS && (
               <a
-                href="https://www.findcourier.ru/download/findcourier"
+                href="https://www.findcourier.ru/download/android-app"
                 target="_blank"
                 className={styles.carousel__button}
               >
