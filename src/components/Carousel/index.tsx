@@ -141,11 +141,15 @@ const Carousel = () => {
               </a>
             )}
             {!isIOS && (
-              <a
-                href="https://play.google.com/store/apps/details?id=com.denievhalid.courierapp"
-                target="_blank"
+              <button
+                onClick={handleDownload}
                 className={styles.carousel__button}
               >
+                {/*<a*/}
+                {/*  href="https://play.google.com/store/apps/details?id=com.denievhalid.courierapp"*/}
+                {/*  target="_blank"*/}
+                {/*  className={styles.carousel__button}*/}
+                {/*>*/}
                 <svg
                   width="144"
                   height="40"
@@ -204,7 +208,8 @@ const Carousel = () => {
                   <rect x="4" y="4" width="2" height="2" fill="white" />
                   <rect x="16" y="4" width="2" height="2" fill="white" />
                 </svg>
-              </a>
+                {/*</a>*/}
+              </button>
             )}
           </div>
         </div>
