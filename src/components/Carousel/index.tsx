@@ -229,7 +229,7 @@ const Carousel = () => {
           {[1, 2, 3].map((i) => (
             <SwiperSlide key={i} className={styles.slider__item}>
               <img
-                src={`s${i}.png`}
+                src={`/s${i}.png`}
                 alt=""
                 className={styles.carousel__image}
               />
