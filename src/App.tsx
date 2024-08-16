@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Carousel, Footer, Header } from "./components";
+import { Header } from "./components";
 import Home from "./views/Home";
 import Documents from "./views/Documents";
 
