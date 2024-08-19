@@ -10,7 +10,6 @@
   --extra-light-blue: #327aff;
   --extra-light-grey: #f7f6fa;
   --extra-bluegrey: #ebedfd;
-  --primary-black: #282141;
   --primary-blue: #364fec;
   --light: #fff;
 }
@@ -38,11 +37,6 @@ body {
   font-weight: 400;
 }
 
-#root {
-  display: grid;
-  grid-template-rows: auto 1fr 1fr;
-}
-
 .container {
   max-width: 1040px;
   width: 100%;
@@ -56,15 +50,6 @@ body {
   @media (max-width: 567px) {
     //padding: 0 20px;
   }
-}
-
-.main {
-  background: var(--extra-light-blue) url("../assets/images/bg.svg") center no-repeat;
-
-  display: flex;
-  align-items: end;
-  flex-direction: column;
-
 }
 
 .swiper-button-disabled {

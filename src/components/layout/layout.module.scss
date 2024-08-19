@@ -1,0 +1,12 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background: var(--extra-light-blue) url("../../assets/images/bg.svg") center no-repeat;
+
+  .main {
+    display: flex;
+    flex-grow: 1;
+  }
+}

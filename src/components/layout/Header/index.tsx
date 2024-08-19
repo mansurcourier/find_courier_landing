@@ -1,8 +1,8 @@
-import React from "react";
-import SocialLinks from "./SocialLinks";
+import React from 'react'
+import SocialLinks from './SocialLinks'
+import MenuLinks from './MenuLinks'
 import logoImg from 'assets/images/logo.svg'
-import MenuLinks from "./MenuLinks";
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
       <MenuLinks />
       <SocialLinks />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,17 +1,10 @@
-import React from "react";
-import { Carousel, Footer } from "../components";
+import React from 'react'
+import { Carousel } from '../components'
 
-const Home = () => {
-  return (
-    <>
-      <main className="main">
-        <div className="container">
-          <Carousel />
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
-};
+const Home = () => (
+  <div className='container'>
+    <Carousel />
+  </div>
+)
 
-export default Home;
+export default Home
