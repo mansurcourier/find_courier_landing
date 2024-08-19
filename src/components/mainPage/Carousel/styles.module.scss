@@ -178,7 +178,7 @@
   }
 
   &::before {
-    background-image: url("../../../public/phone.png");
+    background-image: url("../../../../public/phone.png");
     background-repeat: no-repeat;
     //content: "";
     z-index: 100;
@@ -239,7 +239,7 @@
 }
 
 .bg {
-  background-image: url("../../../public/phone.png");
+  background-image: url("../../../../public/phone.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

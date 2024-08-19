@@ -1,10 +1,11 @@
 import React from 'react'
-import { Carousel } from '../components'
+import { Carousel, FirstSection } from '../components/mainPage'
 
 const Home = () => (
-  <div className='container'>
+  <>
+    <FirstSection />
     <Carousel />
-  </div>
+  </>
 )
 
 export default Home

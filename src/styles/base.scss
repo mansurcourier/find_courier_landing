@@ -5,6 +5,7 @@
 @import "reset";
 @import './icons/style.css';
 @import 'src/components/ui/icon/icon.scss';
+@import 'src/components/ui/grid/grid.scss';
 
 :root {
   --extra-light-blue: #327aff;
@@ -35,21 +36,7 @@ body,
 body {
   font-family: "Object Sans", serif;
   font-weight: 400;
-}
-
-.container {
-  max-width: 1040px;
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-
-  @media (max-width: 1024px) {
-    padding: 0 20px;
-  }
-
-  @media (max-width: 567px) {
-    //padding: 0 20px;
-  }
+  background: #F7F8FC;
 }
 
 .swiper-button-disabled {

@@ -1,2 +1,4 @@
-export { Text } from './text'
-export { Icon } from './icon'
+export * from './text'
+export * from './icon'
+export * from './grid'
+export * from './button'
