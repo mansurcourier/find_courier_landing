@@ -1,0 +1,32 @@
+.header {
+  --height: 72px;
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 24px 44px;
+
+  @media (max-width: 768px) {
+    --height: 48px;
+  }
+}
+
+
+.menu-links {
+  display: flex;
+  gap: 32px;
+}
+
+
+.social-links {
+  display: flex;
+
+  &__item {
+    a {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+  }
+}

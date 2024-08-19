@@ -1,3 +1,4 @@
+import React from "react";
 import { Carousel, Footer } from "../components";
 
 const Home = () => {
