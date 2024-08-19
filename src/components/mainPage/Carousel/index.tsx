@@ -7,8 +7,6 @@ import { useRef } from 'react'
 import styles from './styles.module.scss'
 import 'swiper/css'
 import 'swiper/css/autoplay'
-import axios from 'axios'
-import fileDownload from 'js-file-download'
 import useMediaQuery from '../../../hooks/useMediaQuery'
 import { Container } from 'components/ui'
 
@@ -16,16 +14,6 @@ const Carousel = () => {
   const ref = useRef<SwiperRef>(null)
   const ref2 = useRef<SwiperRef>(null)
   const isMobile = useMediaQuery('(max-width: 567px)')
-
-  const handleDownload = () => {
-    axios
-      .get('https://findcourier.ru/public/findcourier.apk', {
-        responseType: 'blob'
-      })
-      .then((res) => {
-        fileDownload(res.data, 'findourier.apk')
-      })
-  }
 
   return (
     <Container>
