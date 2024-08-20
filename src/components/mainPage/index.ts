@@ -1,2 +1,3 @@
 export { default as Carousel } from './Carousel'
-export { FirstSection } from './FirstSection'
+export * from './FirstSection'
+export * from './Calculator'

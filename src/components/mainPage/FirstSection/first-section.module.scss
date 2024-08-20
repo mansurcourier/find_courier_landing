@@ -4,7 +4,8 @@
   align-items: center;
 
   &-wrapper {
-    background: #F7F8FC;
+    background: var(--color-light-grey);
+    border-radius: 0 0 24px 24px;
   }
 
   &__main-info {

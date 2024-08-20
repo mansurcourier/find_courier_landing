@@ -7,7 +7,6 @@ import cn from "classnames";
 import { docs } from "../docs";
 import { useLayoutEffect } from "react";
 import styles from "./styles.module.scss";
-import * as trace_events from "trace_events";
 
 const HEADER_CLASSNAME = "blue";
 
