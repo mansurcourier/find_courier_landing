@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
 
+  &-wrapper {
+    background: #F7F8FC;
+  }
+
   &__main-info {
     padding: 196px 0 90px;
     display: flex;
