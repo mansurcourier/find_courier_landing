@@ -5,7 +5,7 @@ interface IRowProps {
   children: React.ReactNode
   className?: string
   style?: React.CSSProperties
-  row?: 16 | 20 | 32
+  row?: 8 | 16 | 20 | 32
   align?: 'start' | 'center' | 'end'
   justify?: 'start' | 'center' | 'end' | 'space-between'
   small?: boolean
