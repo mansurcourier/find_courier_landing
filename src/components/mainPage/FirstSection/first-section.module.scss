@@ -23,5 +23,26 @@
 
   &__carousel {
     padding-bottom: 74px;
+    width: 100%;
+  }
+}
+
+
+.icon-carousel {
+  & > div {
+    transition-timing-function: linear !important;
+  }
+
+  &__slider {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image {
+      background: var(--color-light-grey);
+      width: 62px;
+      height: 62px;
+    }
   }
 }

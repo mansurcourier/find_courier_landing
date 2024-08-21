@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { Button, Container, Text } from 'components/ui'
+import IconCarousel from './IconCarousel'
 import styles from './first-section.module.scss'
 
 const FirstSection = () => (
@@ -17,7 +18,7 @@ const FirstSection = () => (
           <Button className='offset-top-44'>Скачать приложение</Button>
         </div>
         <div className={styles['first-section__carousel']}>
-          <div>content</div>
+          <IconCarousel />
         </div>
       </div>
     </Container>
