@@ -4,6 +4,7 @@ import cx from 'classnames'
 interface IContainerProps {
   children: React.ReactNode
   className?: string
+  id?: string
   style?: React.CSSProperties
   fluid?: boolean
   small?: boolean
