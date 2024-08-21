@@ -23,12 +23,12 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--primary-blue);
+      color: var(--color-blue);
     }
   }
 
   &__link_active {
-    color: var(--primary-blue);
+    color: var(--color-blue);
   }
 }
 
@@ -46,5 +46,7 @@
   h2 {
     font-weight: 500;
     font-size: 14px;
+    margin-top: 22px;
+    margin-bottom: 16px;
   }
 }

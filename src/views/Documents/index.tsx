@@ -1,27 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
-import { nav } from "../const";
+import { nav } from "../../const";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { isMobile } from "react-device-detect";
 import cn from "classnames";
-import { docs } from "../docs";
-import { useLayoutEffect } from "react";
+import { docs } from "../../docs";
 import styles from "./styles.module.scss";
-
-const HEADER_CLASSNAME = "blue";
 
 const Documents = () => {
   const { search } = useLocation();
   const qp = new URLSearchParams(search);
   const doc = qp.get("doc") as keyof typeof docs;
-
-  useLayoutEffect(() => {
-    document.querySelector("header")?.classList.add(HEADER_CLASSNAME);
-
-    return () => {
-      document.querySelector("header")?.classList.remove(HEADER_CLASSNAME);
-    };
-  }, []);
 
   return (
     <div className="container">
