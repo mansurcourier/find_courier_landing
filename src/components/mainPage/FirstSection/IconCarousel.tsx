@@ -1,5 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, FreeMode } from 'swiper/modules'
 import icon1 from 'assets/images/icon-carousel/1.svg'
 import icon2 from 'assets/images/icon-carousel/2.svg'
 import icon3 from 'assets/images/icon-carousel/3.svg'
@@ -16,9 +17,6 @@ import styles from './first-section.module.scss'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/pagination'
-
-// import required modules
-import { Autoplay, FreeMode } from 'swiper/modules'
 
 const IconCarousel = () => {
   const sliders = [
