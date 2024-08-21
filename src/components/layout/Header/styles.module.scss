@@ -4,10 +4,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: sticky;
   padding: 24px 44px;
   background: var(--color-white);
-
+  top: 0;
+  z-index: 9;
+  border-radius: 0 0 24px 24px;
   @media (max-width: 768px) {
     --height: 48px;
   }
