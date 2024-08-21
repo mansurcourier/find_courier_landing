@@ -37,7 +37,7 @@ const Footer = () => {
               {nav
                 .filter((v) => v.id !== 'reklama')
                 .map((item) => (
-                  <li className={styles['menu-nav__item']}>
+                  <li key={item.id} className={styles['menu-nav__item']}>
                     <Text as='p' size='sm' color='white' align='end'>
                       <Link className={styles.link} to={`/docs?doc=${item.id}`}>
                         {item.label}

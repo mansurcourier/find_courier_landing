@@ -16,13 +16,13 @@ const SenderAdvantages = () => {
   ]
 
   return (
-    <Container className='offset-top-150'>
+    <Container className='offset-top-150' id='advantages'>
       <Text as='p' align='center' size='xl' family='secondary'>
         Преимущества отправителя
       </Text>
       <Row row={8} className='offset-top-44' small>
         {advantages.map((v) => (
-          <Col sm={4}>
+          <Col key={v.title} sm={4}>
             <Advantage title={v.title} img={v.img as string} />
           </Col>
         ))}

@@ -14,7 +14,7 @@ const Carousel = () => {
   // const isMobile = useMediaQuery('(max-width: 567px)')
 
   return (
-    <Container>
+    <Container id='how-it-work'>
       <div className={styles.carousel}>
         <div className={styles.left}>
           <Swiper
