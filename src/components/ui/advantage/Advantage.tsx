@@ -1,15 +1,14 @@
-import React, { FC, SVGProps } from 'react'
+import React from 'react'
 import { Text } from 'components/ui'
 import styles from './advantage.module.scss'
 
 interface IAdvantageProps {
   title: string
-  img: FC<SVGProps<SVGElement>>
+  img: string
 }
 
 const Advantage = ({ title, img }: IAdvantageProps) => (
   <div className={styles.advantage}>
-    {/*@ts-ignore*/}
     <img src={img} alt='' />
     <Text>{title}</Text>
   </div>

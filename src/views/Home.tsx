@@ -1,5 +1,12 @@
 import React from 'react'
-import { Calculator, Carousel, CourierAdvantages, FirstSection, SenderAdvantages } from '../components/mainPage'
+import {
+  Calculator,
+  Carousel,
+  CourierAdvantages,
+  DownloadApp,
+  FirstSection,
+  SenderAdvantages
+} from 'components/mainPage'
 
 const Home = () => (
   <>
@@ -8,6 +15,7 @@ const Home = () => (
     <Calculator />
     <SenderAdvantages />
     <CourierAdvantages />
+    <DownloadApp />
   </>
 )
 

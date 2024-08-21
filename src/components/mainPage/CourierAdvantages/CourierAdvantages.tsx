@@ -21,7 +21,7 @@ const CourierAdvantages = () => {
       <Row row={8} className='offset-top-44' small>
         {advantages.map((v) => (
           <Col sm={4}>
-            <Advantage title={v.title} img={v.img} />
+            <Advantage title={v.title} img={v.img as string} />
           </Col>
         ))}
       </Row>

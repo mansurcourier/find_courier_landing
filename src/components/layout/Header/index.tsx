@@ -7,8 +7,7 @@ import styles from './styles.module.scss'
 const Header = () => {
   return (
     <header className={styles.header}>
-      {/*@ts-ignore*/}
-      <img src={logoImg} alt='logo' />
+      <img src={logoImg as string} alt='logo' />
       <MenuLinks />
       <SocialLinks />
     </header>
