@@ -20,18 +20,18 @@ import 'swiper/css/pagination'
 
 const IconCarousel = () => {
   const sliders = [
-    { icon: icon1 },
-    { icon: icon2 },
-    { icon: icon3 },
-    { icon: icon4 },
-    { icon: icon5 },
-    { icon: icon6 },
-    { icon: icon7 },
-    { icon: icon8 },
-    { icon: icon9 },
-    { icon: icon10 },
-    { icon: icon11 },
-    { icon: icon12 }
+    { icon: icon1, style: { transform: 'rotate(-15deg)' } },
+    { icon: icon2, style: { transform: 'rotate(15deg)' } },
+    { icon: icon3, style: { transform: 'rotate(-15deg)' } },
+    { icon: icon4, style: { transform: 'rotate(15deg)' } },
+    { icon: icon5, style: { transform: 'rotate(-15deg)' } },
+    { icon: icon6, style: { transform: 'rotate(15deg)' } },
+    { icon: icon7, style: { transform: 'rotate(-15deg)' } },
+    { icon: icon8, style: { transform: 'rotate(15deg)' } },
+    { icon: icon9, style: { transform: 'rotate(-15deg)' } },
+    { icon: icon10, style: { transform: 'rotate(15deg)' } },
+    { icon: icon11, style: { transform: 'rotate(-15deg)' } },
+    { icon: icon12, style: { transform: 'rotate(15deg)' } }
   ]
 
   return (
@@ -42,7 +42,7 @@ const IconCarousel = () => {
       className={styles['icon-carousel']}
       autoplay={{
         delay: 0,
-        disableOnInteraction: false,
+        disableOnInteraction: false
       }}
       speed={5000}
       freeMode
@@ -50,7 +50,7 @@ const IconCarousel = () => {
     >
       {new Array(12).fill('').map((_, i) => (
         <SwiperSlide key={i} className={styles['icon-carousel__slider']}>
-          <img src={sliders[i].icon as string} className={styles.image} alt='icon' />
+          <img src={sliders[i].icon as string} className={styles.image} style={{ ...sliders[i].style }} alt='icon' />
         </SwiperSlide>
       ))}
     </Swiper>
