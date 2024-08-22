@@ -48,9 +48,10 @@ const Calculator = () => {
 
   const { mutate: sendForm, isPending } = useMutation({
     mutationFn: async (formData: Record<string, string>) => {
-      await $api.get(`/v1/cargo?${new URLSearchParams(formData).toString()}`)
+      return await $api.get(`/v1/cargo?${new URLSearchParams(formData).toString()}`)
     },
-    onSuccess: (response: any) => setApproximateCost(response?.data ?? 0)
+    onSuccess: (response: any) => setApproximateCost(response?.data?.data ?? 0),
+    onError: () => setApproximateCost(0)
   })
 
   const prepareData = (data: IFormValues) => {
