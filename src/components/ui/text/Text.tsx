@@ -8,7 +8,7 @@ interface ITextProps extends ISize {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div' | 'li' | 'b' | 'i' | 'small' | 'strong' | 'a'
   className?: string
   style?: React.CSSProperties
-  color?: string | 'primary' | 'usual-gray' | 'gray' | 'white' | 'blue' | 'orange' | 'red' | undefined
+  color?: string | 'primary' | 'gray' | 'white' | 'blue' | 'red' | undefined
   requiredColor?: string
   align?: 'start' | 'end' | 'center' | 'justify'
   weight?: 'bold' | 'semibold' | 'medium' | 'regular' | 'light'

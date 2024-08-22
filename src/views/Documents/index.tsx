@@ -1,9 +1,9 @@
+import { isMobile } from "react-device-detect";
 import { Link, useLocation } from "react-router-dom";
-import { nav } from "../../const";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { isMobile } from "react-device-detect";
 import cn from "classnames";
+import { nav } from "../../const";
 import { docs } from "../../docs";
 import styles from "./styles.module.scss";
 

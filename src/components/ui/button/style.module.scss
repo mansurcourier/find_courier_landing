@@ -1,5 +1,5 @@
 .button {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 16px;
   line-height: 18px;
   transition: all 200ms linear;
@@ -13,6 +13,7 @@
   appearance: none;
   border-radius: 30px;
   padding: 13px 24px;
+  font-weight: 500;
 
   &:hover {
     background-color: #3b29cc;

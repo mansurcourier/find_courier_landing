@@ -1,8 +1,67 @@
+import { useState } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import { useMutation } from '@tanstack/react-query'
 import cx from 'classnames'
-import { Container, Text } from 'components/ui'
-import styles from './styles.module.scss'
+import { $api } from 'http/axios'
+import { Button, Container, Input, InputGroup, Select, Text } from 'components/ui'
+import styles from './calculator.module.scss'
+
+interface IFormValues {
+  from?: string
+  destination: string
+  weight: string
+  length: string
+  width: string
+  height: string
+}
 
 const Calculator = () => {
+  const [approximateCost, setApproximateCost] = useState(0)
+
+  const countries = [
+    { key: 'russia', value: 'Россия' },
+    { key: 'turkey', value: 'Турция' }
+  ]
+
+  const inputValidation = {
+    required: { value: true, message: 'Обязательное поле' },
+    pattern: { value: /^\d*[,.]?\d*$/, message: 'Неверный формат' }
+  }
+
+  const {
+    handleSubmit,
+    control,
+    register,
+    setError,
+    formState: { errors }
+  } = useForm<IFormValues>({
+    defaultValues: {
+      from: countries[0].key,
+      destination: countries[1].key,
+      weight: '0.5',
+      length: '20',
+      width: '20',
+      height: '20'
+    }
+  })
+
+  const { mutate: sendForm } = useMutation({
+    mutationFn: async (formData: Record<string, string>) => {
+      await $api.get(`/v1/cargo?${new URLSearchParams(formData).toString()}`)
+    },
+    onSuccess: (response: any) => setApproximateCost(response?.data ?? 0)
+  })
+
+  const onSubmit = (data: IFormValues) => {
+    if (data.destination === data.from) {
+      return setError('destination', { message: 'Страны не должны совпадать' })
+    }
+
+    if (data.from) delete data.from
+
+    sendForm(data as unknown as Record<string, string>)
+  }
+
   return (
     <Container>
       <div className={styles.calculator}>
@@ -15,7 +74,105 @@ const Calculator = () => {
           </Text>
         </div>
         <div className={styles.right}>
-          <Text size='xxl'>Калькулятор гарантированной доставки</Text>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <InputGroup gap={8}>
+              <Controller
+                name='from'
+                control={control}
+                rules={{ required: { value: true, message: 'Обязательное поле' } }}
+                render={({ field: { name, value, onChange } }) => (
+                  <Select
+                    name={name}
+                    label='Страна отправки'
+                    onChange={onChange}
+                    value={value}
+                    errors={errors}
+                    required
+                    fluid
+                  >
+                    {countries.map((value) => (
+                      <Select.Option key={value.key} value={value.key}>
+                        {value.value}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                )}
+              />
+              <Controller
+                name='destination'
+                control={control}
+                rules={{ required: { value: true, message: 'Обязательное поле' } }}
+                render={({ field: { name, value, onChange } }) => (
+                  <Select
+                    name={name}
+                    label='Страна доставки'
+                    onChange={onChange}
+                    value={value}
+                    errors={errors}
+                    required
+                    fluid
+                  >
+                    {countries.map((value) => (
+                      <Select.Option key={value.key} value={value.key}>
+                        {value.value}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                )}
+              />
+            </InputGroup>
+            <InputGroup gap={8} className='offset-top-24'>
+              <Input
+                name='weight'
+                register={register}
+                label='Вес, кг'
+                rules={inputValidation}
+                errors={errors}
+                fluid
+                required
+              />
+              <Input
+                name='length'
+                register={register}
+                label='Длина, см'
+                rules={inputValidation}
+                errors={errors}
+                fluid
+                required
+              />
+              <Input
+                name='width'
+                register={register}
+                label='Ширина, см'
+                rules={inputValidation}
+                errors={errors}
+                fluid
+                required
+              />
+              <Input
+                name='height'
+                register={register}
+                label='Высота, см'
+                rules={inputValidation}
+                errors={errors}
+                fluid
+                required
+              />
+            </InputGroup>
+            <div className={styles['calculate-delivery']}>
+              <div>
+                <Text as='p' size='sm'>
+                  Примерная стоимость
+                </Text>
+                <Text as='p' className={styles['calculate-delivery__cost']} color='blue' family='secondary'>
+                  {approximateCost} ₽
+                </Text>
+              </div>
+              <Button type='submit'>
+                Добавить заявку в приложении
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </Container>

@@ -20,7 +20,7 @@ const FormLabel = ({ label, isActive, className, ...rest }: IFormLabel) => (
     }}
   >
     {label && (
-      <Text className={cx(s.label, { [s.active]: isActive }, className)} family='secondary' {...rest}>
+      <Text className={cx(s.label, { [s.active]: isActive }, className)} {...rest}>
         {label}
       </Text>
     )}
