@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import cx from 'classnames'
@@ -33,6 +33,7 @@ const Calculator = () => {
     control,
     register,
     setError,
+    getValues,
     formState: { errors }
   } = useForm<IFormValues>({
     defaultValues: {
@@ -45,7 +46,7 @@ const Calculator = () => {
     }
   })
 
-  const { mutate: sendForm } = useMutation({
+  const { mutate: sendForm, isPending } = useMutation({
     mutationFn: async (formData: Record<string, string>) => {
       await $api.get(`/v1/cargo?${new URLSearchParams(formData).toString()}`)
     },
@@ -61,6 +62,10 @@ const Calculator = () => {
 
     sendForm(data as unknown as Record<string, string>)
   }
+
+  useEffect(() => {
+    sendForm(getValues() as unknown as Record<string, string>)
+  }, [])
 
   return (
     <Container>
@@ -168,7 +173,7 @@ const Calculator = () => {
                   {approximateCost} ₽
                 </Text>
               </div>
-              <Button type='submit'>
+              <Button type='submit' disabled={isPending}>
                 Добавить заявку в приложении
               </Button>
             </div>
