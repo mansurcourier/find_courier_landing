@@ -53,18 +53,30 @@ const Calculator = () => {
     onSuccess: (response: any) => setApproximateCost(response?.data ?? 0)
   })
 
+  const prepareData = (data: IFormValues) => {
+    const copyData = JSON.parse(JSON.stringify(data))
+
+    Object.keys(copyData).forEach((name) => {
+      if (name === 'from' || name === 'destination') return
+      // @ts-ignore
+      return copyData[name] = Number(copyData[name].replace(',', '.'))
+    })
+
+    if (copyData.from) delete copyData.from
+
+    return copyData
+  }
+
   const onSubmit = (data: IFormValues) => {
     if (data.destination === data.from) {
       return setError('destination', { message: 'Страны не должны совпадать' })
     }
 
-    if (data.from) delete data.from
-
-    sendForm(data as unknown as Record<string, string>)
+    sendForm(prepareData(data) as unknown as Record<string, string>)
   }
 
   useEffect(() => {
-    sendForm(getValues() as unknown as Record<string, string>)
+    sendForm(prepareData(getValues()) as unknown as Record<string, string>)
   }, [])
 
   return (
