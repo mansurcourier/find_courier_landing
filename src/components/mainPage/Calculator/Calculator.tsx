@@ -15,13 +15,23 @@ interface IFormValues {
   height: string
 }
 
+interface ICountry {
+  key: string
+  value: string
+}
+
+const countries: ICountry[] = [
+  { key: 'russia', value: 'Россия' },
+  { key: 'turkey', value: 'Турция' },
+  { key: 'vietnam', value: 'Вьетнам' }
+]
+
 const Calculator = () => {
   const [approximateCost, setApproximateCost] = useState(0)
-
-  const countries = [
-    { key: 'russia', value: 'Россия' },
-    { key: 'turkey', value: 'Турция' }
-  ]
+  const [fromSelectOption] = useState<ICountry[]>(countries)
+  const [destinationSelectOption, setDestinationSelectOption] = useState<ICountry[]>(
+    countries.filter((v) => v.key !== countries[0].key)
+  )
 
   const inputValidation = {
     required: { value: true, message: 'Обязательное поле' },
@@ -34,11 +44,12 @@ const Calculator = () => {
     register,
     setError,
     getValues,
+    setValue,
     formState: { errors }
   } = useForm<IFormValues>({
     defaultValues: {
       from: countries[0].key,
-      destination: countries[1].key,
+      destination: 'turkey',
       weight: '0.5',
       length: '20',
       width: '20',
@@ -63,9 +74,25 @@ const Calculator = () => {
       return copyData[name] = Number(copyData[name].replace(',', '.'))
     })
 
+    if (copyData.destination === 'russia') copyData.destination = copyData.from
     if (copyData.from) delete copyData.from
 
     return copyData
+  }
+
+  const fromCountryChange = (data: any) => {
+    if (data !== 'russia') {
+      setDestinationSelectOption([countries[0]])
+
+      if (getValues('destination') !== 'russia') {
+        setValue('destination', 'russia')
+      }
+
+      return
+    }
+
+    setDestinationSelectOption(countries.filter((v) => v.key !== countries[0].key))
+    setValue('destination', 'turkey')
   }
 
   const onSubmit = (data: IFormValues) => {
@@ -102,13 +129,16 @@ const Calculator = () => {
                   <Select
                     name={name}
                     label='Страна отправки'
-                    onChange={onChange}
+                    onChange={(data) => {
+                      onChange(data)
+                      fromCountryChange(data)
+                    }}
                     value={value}
                     errors={errors}
                     required
                     fluid
                   >
-                    {countries.map((value) => (
+                    {fromSelectOption.map((value) => (
                       <Select.Option key={value.key} value={value.key}>
                         {value.value}
                       </Select.Option>
@@ -130,7 +160,7 @@ const Calculator = () => {
                     required
                     fluid
                   >
-                    {countries.map((value) => (
+                    {destinationSelectOption.map((value) => (
                       <Select.Option key={value.key} value={value.key}>
                         {value.value}
                       </Select.Option>
