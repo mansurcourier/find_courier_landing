@@ -46,3 +46,45 @@
     }
   }
 }
+
+
+.download-app {
+  &__header {
+    padding: 24px;
+    background: var(--color-light-grey);
+
+    .text {
+      max-width: 290px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    background: var(--color-white);
+    border-radius: 24px;
+    padding: 24px;
+
+    &-wrapper {
+      background: var(--color-light-grey);
+    }
+
+    .apps {
+      display: flex;
+      column-gap: 100px;
+      justify-content: center;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+
+        a {
+          display: flex;
+        }
+      }
+    }
+  }
+}

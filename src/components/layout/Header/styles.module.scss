@@ -19,6 +19,10 @@
 .menu-links {
   display: flex;
   gap: 32px;
+
+  &__text {
+    cursor: pointer;
+  }
 }
 
 
