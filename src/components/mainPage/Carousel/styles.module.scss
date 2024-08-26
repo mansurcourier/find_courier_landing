@@ -2,24 +2,50 @@
 
 .carousel {
   display: flex;
-  column-gap: 80px;
+  gap: 32px;
+  flex-direction: column-reverse;
+  align-items: center;
+  @media (min-width: $sm) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
+    padding-top: 85px;
+  }
+  @media (min-width: $md) {
+    padding-top: 80px;
+    margin-bottom: -110px;
+    gap: 100px;
+    justify-content: center;
+  }
   @media (min-width: $lg) {
-    padding: 80px 118px;
+    gap: 80px;
   }
 
   .left {
-    max-width: 450px;
-    @media (max-width: 567px) {
-      display: flex;
-      flex-direction: column-reverse;
-      row-gap: 46px;
-      padding-top: 40px;
+    max-width: 100%;
+    @media (min-width: $sm) {
+      max-width: 383px;
+    }
+    @media (min-width: $md) {
+      max-width: 450px;
     }
   }
 
   .right {
+    width: 168px;
+    height: 343px;
     position: relative;
-    transform: rotate(4deg) translateY(-110px);
+    transform: rotate(4deg) translateY(-15px);
+    @media (min-width: $sm) {
+      width: 220px;
+      height: 449px;
+      transform: rotate(4deg) translateY(-20px);
+    }
+    @media (min-width: $md) {
+      width: 290px;
+      height: 592px;
+      transform: rotate(4deg) translateY(-110px);
+    }
   }
 
   &__image {
@@ -28,39 +54,6 @@
 
     @media (max-width: 567px) {
       max-width: 60%;
-    }
-  }
-
-  &__col {
-    width: 100%;
-  }
-
-  &__item {
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    position: relative;
-    top: 12px;
-    left: 10px;
-
-    @media (max-width: 576px) {
-      flex-direction: column;
-    }
-  }
-
-  &__arrows {
-    display: flex;
-    column-gap: 12px;
-    z-index: 100;
-
-    @media (max-width: 576px) {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      justify-content: space-between;
-      width: 100%;
     }
   }
 
@@ -73,111 +66,78 @@
     outline: none;
   }
 
-  &__phone {
-    max-width: 328px;
-    width: 100%;
-    display: block;
+  .slider {
     position: relative;
-    z-index: 100;
-  }
-}
-
-.slider {
-  position: relative;
-  border-top-left-radius: 42px;
-  border-top-right-radius: 42px;
-  //background-color: #fff;
-  max-width: 300px;
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    display: block;
-    background-color: #fff;
-    border-top-left-radius: 52px;
-    border-top-right-radius: 52px;
-    position: absolute;
-    left: 6px;
-    top: 0;
-    right: 6px;
-    bottom: 0;
-  }
-
-  &::before {
-    background-image: url("../../../../public/phone.png");
-    background-repeat: no-repeat;
-    //content: "";
-    z-index: 100;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: contain;
-  }
-
-  @media (max-width: 767px) {
-    max-width: 268px;
-  }
-
-  @media (max-width: 576px) {
-    //top: 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-  }
-
-  &__item {
-    position: relative;
-    border-top-left-radius: 62px;
-    border-top-right-radius: 62px;
     overflow: hidden;
+    top: 6px;
+    max-width: 154px;
+    @media (min-width: $sm) {
+      max-width: 201px;
+      top: 9px;
+    }
+    @media (min-width: $md) {
+      max-width: 265px;
+      top: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .bg {
+    background-image: url("../../../../public/iphone.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    max-width: 100%;
+    height: 100%;
   }
 }
 
-.sliderTitles {
-  max-width: 640px;
-  margin-left: 0 !important;
 
-  @media (max-width: 1024px) {
-    max-width: 400px;
+.carousel-arrow {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  margin-top: 32px;
+  justify-content: space-between;
+  @media (min-width: $sm) {
+    margin-top: 92px;
+    justify-content: flex-start;
   }
 
-  @media (max-width: 767px) {
-    max-width: 300px;
+  &__arrow {
+    width: 72px;
+    height: 48px;
+    padding: 12px 24px 12px 24px;
+    border-radius: 30px;
+    background: #E7E8FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover, &:disabled {
+      background: #e7e8fc6e;
+
+      svg {
+        path {
+          stroke: #0d11412e;;
+        }
+      }
+    }
   }
 
-  @media (max-width: 567px) {
-    max-width: 420px;
-    margin: 0 auto !important;
-  }
-
-  @media (max-width: 480px) {
-    max-width: 320px;
-    margin: 0 auto !important;
-  }
-}
-
-.bg {
-  background-image: url("../../../assets/images/phone.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  max-width: 100%;
-  height: 100%;
-
-  @media (max-width: 567px) {
-    max-width: 278px;
-    margin: 0 auto;
+  &__slider-count {
+    margin: 24px 0;
+    min-width: 47px;
+    font-size: 23px;
+    line-height: 26px;
   }
 }

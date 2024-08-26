@@ -110,7 +110,7 @@ const Calculator = () => {
   }, [])
 
   return (
-    <Container className='offset-top-80'>
+    <Container className='offset-top-92 offset-lg-top-80'>
       <div className={styles.calculator}>
         <div className={styles.left}>
           <Text

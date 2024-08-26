@@ -1,65 +1,41 @@
-import cn from "classnames";
-import styles from "./styles.module.scss";
+import { Button, Text } from 'components/ui'
+import styles from './styles.module.scss'
 
 interface CarouselArrowsProps {
-  onPrev: () => void;
-  onNext: () => void;
+  onPrev: VoidFunction
+  onNext: VoidFunction
+  activeSlider: number
+  sliderCount: number
 }
 
-const CarouselArrows = ({ onPrev, onNext }: CarouselArrowsProps) => {
+const CarouselArrows = ({ onPrev, onNext, activeSlider, sliderCount }: CarouselArrowsProps) => {
   return (
-    <div className={styles.carousel__arrows}>
-      <button
-        className={cn({
-          "swiper-button-prev": true,
-          [styles.carousel__arrow_btn]: true,
-        })}
-        onClick={onPrev}
-      >
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-          <rect
-            y="36"
-            width="36"
-            height="36"
-            rx="18"
-            transform="rotate(-90 0 36)"
-            fill="#EBEDFD"
-          />
+    <div className={styles['carousel-arrow']}>
+      <Button className={styles['carousel-arrow__arrow']} onClick={onPrev} disabled={activeSlider <= 1}>
+        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
-            d="M11 18L25 18M11 18L18 11M11 18L18 25"
-            stroke="#364FEC"
-            strokeWidth="2"
-            strokeMiterlimit="10"
-            strokeLinejoin="round"
+            d='M1 12L22 12M1 12L11 2M1 12L11 22'
+            stroke='#0D1141'
+            strokeWidth='2'
+            strokeMiterlimit='10'
+            strokeLinejoin='round'
           />
         </svg>
-      </button>
-      <button
-        className={cn({
-          "swiper-button-next": true,
-          [styles.carousel__arrow_btn]: true,
-        })}
-        onClick={onNext}
-      >
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-          <rect
-            width="36"
-            height="36"
-            rx="18"
-            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 36 36)"
-            fill="#EBEDFD"
-          />
+      </Button>
+      <Text className={styles['carousel-arrow__slider-count']}>{activeSlider} / {sliderCount}</Text>
+      <Button className={styles['carousel-arrow__arrow']} onClick={onNext} disabled={activeSlider >= sliderCount}>
+        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
-            d="M25 18L11 18M25 18L18 11M25 18L18 25"
-            stroke="#364FEC"
-            strokeWidth="2"
-            strokeMiterlimit="10"
-            strokeLinejoin="round"
+            d='M22 12L1 12M22 12L12 2M22 12L12 22'
+            stroke='#0D1141'
+            strokeWidth='2'
+            strokeMiterlimit='10'
+            strokeLinejoin='round'
           />
         </svg>
-      </button>
+      </Button>
     </div>
-  );
-};
+  )
+}
 
-export default CarouselArrows;
+export default CarouselArrows
