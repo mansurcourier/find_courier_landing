@@ -15,7 +15,7 @@ interface ITextProps extends ISize {
   overflow?: 'fade' | 'ellipsis'
   transform?: 'lowercase' | 'uppercase' | 'capitalize'
   decoration?: 'underline' | 'line-through'
-  whiteSpace?: 'pre-line' | 'nowrap'
+  whiteSpace?: 'pre-line' | 'nowrap' | 'initial'
   family?: 'primary' | 'secondary'
   cursor?: 'pointer'
   required?: boolean | undefined

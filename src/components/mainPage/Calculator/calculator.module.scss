@@ -1,13 +1,29 @@
+@import "src/styles/media";
+
 .calculator {
   background: var(--color-light-grey);
-  padding: 44px;
+  padding: 32px 16px;
   border-radius: 24px;
   display: flex;
-  gap: 90px;
+  flex-direction: column;
+  gap: 32px;
+  @media (min-width: $sm) {
+    gap: 44px;
+  }
+  @media (min-width: $md) {
+    gap: 72px;
+  }
+  @media (min-width: $lg) {
+    padding: 44px;
+    flex-direction: row;
+    gap: 90px;
+  }
 
   .left {
-    max-width: 450px;
-    width: 100%;
+    @media (min-width: $lg) {
+      max-width: 450px;
+      width: 100%;
+    }
   }
 
   &__description {
@@ -15,17 +31,41 @@
   }
 
   .calculate-delivery {
-    margin-top: 32px;
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 24px;
+    @media (min-width: $sm) {
+      margin-top: 32px;
+      gap: 8px;
+    }
 
     &__cost {
-      font-size: 32px;
-      line-height: 36px;
+      font-size: 26px;
+      line-height: 30px;
       margin-top: 8px;
+      @media (min-width: $sm) {
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  .small-row {
+    @media (max-width: $xs) {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+  }
+
+  .small-col {
+    @media (max-width: $xs) {
+      max-width: 50%;
+      flex: 0 0 50%;
+      padding-left: 4px;
+      padding-right: 4px;
     }
   }
 }

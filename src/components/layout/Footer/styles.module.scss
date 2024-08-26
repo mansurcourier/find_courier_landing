@@ -1,7 +1,12 @@
+@import "src/styles/media";
+
 .footer {
   background-color: var(--color-deep-black);
   border-radius: 24px 24px 0 0;
-  padding: 32px 32px 72px;
+  padding: 32px 24px 64px;
+  @media (min-width: $sm) {
+    padding: 32px 32px 72px;
+  }
 
   &-wrapper {
     background: var(--color-light-grey);
@@ -11,17 +16,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .logo-icon {
+      width: 34.5px;
+      height: auto;
+      @media (min-width: $sm) {
+        width: 57.5px;
+      }
+      @media (min-width: $md) {
+        width: 75.5px;
+      }
+    }
+
+    .logo-text {
+      width: 162.5px;
+      height: auto;
+      @media (min-width: $sm) {
+        width: 270.5px;
+      }
+      @media (min-width: $md) {
+        width: 358.5px;
+      }
+    }
   }
 
   &__content {
-    margin-top: 84px;
+    margin-top: 48px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column-reverse;
+    @media (min-width: $sm) {
+      margin-top: 97px;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    @media (min-width: $lg) {
+      margin-top: 84px;
+    }
 
     .email {
-      font-size: 32px;
-      line-height: 33px;
+      font-size: 16px;
+      line-height: 16px;
+      margin-top: 48px;
+      @media (min-width: $sm) {
+        margin-top: 0;
+        font-size: 22px;
+        line-height: 22px;
+      }
+      @media (min-width: $md) {
+        font-size: 32px;
+        line-height: 33px;
+      }
 
       a {
         display: block;

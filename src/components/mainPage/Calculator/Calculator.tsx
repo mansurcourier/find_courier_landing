@@ -3,7 +3,8 @@ import { Controller, useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import cx from 'classnames'
 import { $api } from 'http/axios'
-import { Button, Container, Input, InputGroup, Select, Text } from 'components/ui'
+import { useWindowSize } from 'hooks'
+import { Button, Container, Input, Col, Row, Select, Text } from 'components/ui'
 import styles from './calculator.module.scss'
 
 interface IFormValues {
@@ -32,6 +33,7 @@ const Calculator = () => {
   const [destinationSelectOption, setDestinationSelectOption] = useState<ICountry[]>(
     countries.filter((v) => v.key !== countries[0].key)
   )
+  const { deviceWidth } = useWindowSize()
 
   const inputValidation = {
     required: { value: true, message: 'Обязательное поле' },
@@ -108,105 +110,128 @@ const Calculator = () => {
   }, [])
 
   return (
-    <Container>
+    <Container className='offset-top-80'>
       <div className={styles.calculator}>
         <div className={styles.left}>
-          <Text size='xxl' family='secondary'>
-            Калькулятор гарантированной доставки
+          <Text
+            as='p'
+            size='xxl'
+            family='secondary'
+            align={deviceWidth === 'large' ? 'start' : 'center'}
+            whiteSpace={deviceWidth === 'medium' ? 'initial' : 'pre-line'}
+          >
+            {`Калькулятор\nгарантированной доставки`}
           </Text>
-          <Text as='p' className={cx('offset-top-24', styles.calculator__description)}>
+          <Text
+            as='p'
+            size='lg'
+            className={cx('offset-top-12 offset-lg-top-24', styles.calculator__description)}
+            align={deviceWidth === 'large' ? 'start' : 'center'}
+          >
             По некоторым направлениям действует наша сервисная гарантированная доставка!
           </Text>
         </div>
         <div className={styles.right}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <InputGroup gap={8}>
-              <Controller
-                name='from'
-                control={control}
-                rules={{ required: { value: true, message: 'Обязательное поле' } }}
-                render={({ field: { name, value, onChange } }) => (
-                  <Select
-                    name={name}
-                    label='Страна отправки'
-                    onChange={(data) => {
-                      onChange(data)
-                      fromCountryChange(data)
-                    }}
-                    value={value}
-                    errors={errors}
-                    required
-                    fluid
-                  >
-                    {fromSelectOption.map((value) => (
-                      <Select.Option key={value.key} value={value.key}>
-                        {value.value}
-                      </Select.Option>
-                    ))}
-                  </Select>
-                )}
-              />
-              <Controller
-                name='destination'
-                control={control}
-                rules={{ required: { value: true, message: 'Обязательное поле' } }}
-                render={({ field: { name, value, onChange } }) => (
-                  <Select
-                    name={name}
-                    label='Страна доставки'
-                    onChange={onChange}
-                    value={value}
-                    errors={errors}
-                    required
-                    fluid
-                  >
-                    {destinationSelectOption.map((value) => (
-                      <Select.Option key={value.key} value={value.key}>
-                        {value.value}
-                      </Select.Option>
-                    ))}
-                  </Select>
-                )}
-              />
-            </InputGroup>
-            <InputGroup gap={8} className='offset-top-24'>
-              <Input
-                name='weight'
-                register={register}
-                label='Вес, кг'
-                rules={inputValidation}
-                errors={errors}
-                fluid
-                required
-              />
-              <Input
-                name='length'
-                register={register}
-                label='Длина, см'
-                rules={inputValidation}
-                errors={errors}
-                fluid
-                required
-              />
-              <Input
-                name='width'
-                register={register}
-                label='Ширина, см'
-                rules={inputValidation}
-                errors={errors}
-                fluid
-                required
-              />
-              <Input
-                name='height'
-                register={register}
-                label='Высота, см'
-                rules={inputValidation}
-                errors={errors}
-                fluid
-                required
-              />
-            </InputGroup>
+            <Row row={16}>
+              <Col xs={6}>
+                <Controller
+                  name='from'
+                  control={control}
+                  rules={{ required: { value: true, message: 'Обязательное поле' } }}
+                  render={({ field: { name, value, onChange } }) => (
+                    <Select
+                      name={name}
+                      label='Страна отправки'
+                      onChange={(data) => {
+                        onChange(data)
+                        fromCountryChange(data)
+                      }}
+                      value={value}
+                      errors={errors}
+                      required
+                      fluid
+                    >
+                      {fromSelectOption.map((value) => (
+                        <Select.Option key={value.key} value={value.key}>
+                          {value.value}
+                        </Select.Option>
+                      ))}
+                    </Select>
+                  )}
+                />
+              </Col>
+              <Col xs={6}>
+                <Controller
+                  name='destination'
+                  control={control}
+                  rules={{ required: { value: true, message: 'Обязательное поле' } }}
+                  render={({ field: { name, value, onChange } }) => (
+                    <Select
+                      name={name}
+                      label='Страна доставки'
+                      onChange={onChange}
+                      value={value}
+                      errors={errors}
+                      required
+                      fluid
+                    >
+                      {destinationSelectOption.map((value) => (
+                        <Select.Option key={value.key} value={value.key}>
+                          {value.value}
+                        </Select.Option>
+                      ))}
+                    </Select>
+                  )}
+                />
+              </Col>
+            </Row>
+            <Row row={16} className={cx('offset-top-24', styles['small-row'])}>
+              <Col xs={6} sm={3} className={styles['small-col']}>
+                <Input
+                  name='weight'
+                  register={register}
+                  label='Вес, кг'
+                  rules={inputValidation}
+                  errors={errors}
+                  fluid
+                  required
+                />
+              </Col>
+              <Col xs={6} sm={3} className={styles['small-col']}>
+                <Input
+                  name='length'
+                  register={register}
+                  label='Длина, см'
+                  rules={inputValidation}
+                  errors={errors}
+                  fluid
+                  required
+                />
+              </Col>
+              <Col xs={6} sm={3} className={styles['small-col']}>
+                <Input
+                  name='width'
+                  register={register}
+                  label='Ширина, см'
+                  rules={inputValidation}
+                  errors={errors}
+                  fluid
+                  required
+                />
+              </Col>
+              <Col xs={6} sm={3} className={styles['small-col']}>
+                <Input
+                  name='height'
+                  register={register}
+                  label='Высота, см'
+                  rules={inputValidation}
+                  errors={errors}
+                  fluid
+                  required
+                />
+              </Col>
+            </Row>
             <div className={styles['calculate-delivery']}>
               <div>
                 <Text as='p' size='sm'>
@@ -216,7 +241,7 @@ const Calculator = () => {
                   {approximateCost} ₽
                 </Text>
               </div>
-              <Button type='submit' disabled={isPending}>
+              <Button type='submit' disabled={isPending} fluid={deviceWidth === 'small'}>
                 Добавить заявку в приложении
               </Button>
             </div>

@@ -8,14 +8,16 @@ interface IInputGroupProps {
   alignItems?: 'center' | 'start' | 'end'
   style?: React.CSSProperties
   gap?: 4 | 8 | 16
+  direction?: 'row' | 'column'
 }
 
-const InputGroup = ({ children, className, alignItems, style, gap }: IInputGroupProps) => {
+const InputGroup = ({ children, className, alignItems, style, gap, direction = 'row' }: IInputGroupProps) => {
   const classList = cx(
     s['input-group'],
     {
       [`align-items-${alignItems}`]: alignItems,
-      [s[`gap-${gap}`]]: gap
+      [s[`gap-${gap}`]]: gap,
+      [s[`direction-${direction}`]]: direction
     },
     className
   )

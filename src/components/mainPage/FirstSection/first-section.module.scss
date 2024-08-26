@@ -1,3 +1,5 @@
+@import "src/styles/media";
+
 .first-section {
   display: flex;
   flex-direction: column;
@@ -9,12 +11,18 @@
   }
 
   &__main-info {
-    padding: 196px 0 90px;
+    padding: 196px 0 32px;
     display: flex;
     align-items: center;
     flex-direction: column;
     max-width: 900px;
     width: 100%;
+    @media (min-width: $sm) {
+      padding: 196px 0 72px;
+    }
+    @media (min-width: $md) {
+      padding: 196px 0 100px;
+    }
 
     .description {
       max-width: 534px;
@@ -22,13 +30,24 @@
   }
 
   &__carousel {
-    padding-bottom: 74px;
+    padding-bottom: 48px;
     width: 100%;
+    @media (min-width: $sm) {
+      padding-bottom: 74px;
+    }
+    @media (min-width: $lg) {
+      padding-bottom: 62px;
+    }
   }
 }
 
 
 .icon-carousel {
+  margin: 0 -24px !important;
+  @media (min-width: $lg) {
+    margin: 0 auto !important;
+  }
+
   & > div {
     transition-timing-function: linear !important;
   }
@@ -41,8 +60,20 @@
 
     .image {
       background: var(--color-light-grey);
-      width: 62px;
-      height: 62px;
+      width: 44px;
+      height: 44px;
+      @media (min-width: $sm) {
+        width: 55px;
+        height: 55px;
+      }
+      @media (min-width: $md) {
+        width: 62px;
+        height: 62px;
+      }
+      @media (min-width: $lg) {
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 }

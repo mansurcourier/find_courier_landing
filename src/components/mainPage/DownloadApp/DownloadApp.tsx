@@ -9,10 +9,10 @@ import styles from './download-app.module.scss'
 
 const DownloadApp = () => {
   return (
-    <div className={cx(styles['download-app-wrapper'], 'offset-top-150')}>
+    <div className={cx(styles['download-app-wrapper'], 'offset-top-92 offset-sm-top-150')}>
       <Container>
         <div className={styles['download-app']}>
-          <Text as='p' align='center'>
+          <Text as='p' align='center' size='lg'>
             Скачайте FindCourier на ваш смартфон и ощутите все преимущества нашего удобного сервиса доставки
           </Text>
           <div className={styles['download-app__buttons']}>

@@ -6,29 +6,42 @@
   line-height: 22px;
 
   &.text-xxl {
-    font-size: 34px;
-    line-height: 39px;
-    //@media (min-width: $sm) {
-    //  font-size: 25px;
-    //  line-height: 26px;
-    //}
+    font-size: 18px;
+    line-height: 20px;
+    @media (min-width: $sm) {
+      font-size: 22px;
+      line-height: 25px;
+    }
+    @media (min-width: $md) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+    @media (min-width: $lg) {
+      font-size: 34px;
+      line-height: 39px;
+    }
   }
 
   &.text-xl {
-    font-size: 28px;
-    line-height: 32px;
-    //@media (min-width: $sm) {
-    //  font-size: 20px;
-    //  line-height: 21px;
-    //}
+    font-size: 24px;
+    line-height: 27px;
+    @media (min-width: $sm) {
+      font-size: 28px;
+      line-height: 32px;
+    }
   }
 
   &.text-lg {
-    font-size: 18px;
-    line-height: 22px;
-    //@media (min-width: $sm) {
-    //  line-height: 19px;
-    //}
+    font-size: 12px;
+    line-height: 16px;
+    @media (min-width: $sm) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @media (min-width: $lg) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &.text-md {
@@ -40,7 +53,7 @@
     //}
   }
 
-  &.text-sm {
+    &.text-sm {
     font-size: 14px;
     line-height: 16px;
     //@media (min-width: $sm) {
@@ -232,6 +245,10 @@ h6 {
 
 .white-space-pre-line {
   white-space: pre-line;
+}
+
+.white-space-initial {
+  white-space: initial;
 }
 
 .font-family-primary {

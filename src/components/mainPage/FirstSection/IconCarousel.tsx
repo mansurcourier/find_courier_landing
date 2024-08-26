@@ -36,8 +36,8 @@ const IconCarousel = () => {
 
   return (
     <Swiper
-      slidesPerView={10}
-      spaceBetween={32}
+      slidesPerView={5}
+      spaceBetween={10}
       modules={[FreeMode, Autoplay]}
       className={styles['icon-carousel']}
       autoplay={{
@@ -45,6 +45,32 @@ const IconCarousel = () => {
         disableOnInteraction: false
       }}
       speed={5000}
+      breakpoints={{
+        320: {
+          slidesPerView: 5,
+          spaceBetween: 15
+        },
+        375: {
+          slidesPerView: 6,
+          spaceBetween: 20
+        },
+        576: {
+          slidesPerView: 7,
+          spaceBetween: 25
+        },
+        768: {
+          slidesPerView: 9,
+          spaceBetween: 25
+        },
+        1024: {
+          slidesPerView: 10,
+          spaceBetween: 25
+        },
+        1200: {
+          slidesPerView: 10,
+          spaceBetween: 32
+        }
+      }}
       freeMode
       loop
     >
