@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   &-wrapper {
     background: var(--color-light-grey);
@@ -11,21 +12,130 @@
   }
 
   &__main-info {
-    padding: 196px 0 32px;
+    padding: 120px 0 32px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 900px;
+    max-width: 468px;
     width: 100%;
+    position: relative;
+    z-index: 1;
     @media (min-width: $sm) {
-      padding: 196px 0 72px;
+      padding: 140px 0 72px;
     }
     @media (min-width: $md) {
       padding: 196px 0 100px;
+      max-width: 750px
+    }
+    @media (min-width: $lg) {
+      max-width: 900px;
     }
 
     .description {
-      max-width: 534px;
+      max-width: 535px;
+      @media (min-width: $md) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__animation {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__people {
+    position: absolute;
+    z-index: 1;
+    width: 38px;
+    height: auto;
+    @media (min-width: $sm) {
+      width: 45px;
+    }
+    @media (min-width: $md) {
+      width: 60px;
+    }
+    @media (min-width: $lg) {
+      width: 68px;
+    }
+
+    &.turkish {
+      top: 32px;
+      right: 90px;
+      @media (min-width: $sm) {
+        top: 60px;
+        right: 190px;
+      }
+      @media (min-width: $md) {
+        top: 90px;
+        right: 290px;
+      }
+    }
+
+    &.china {
+      top: 90px;
+      right: 0;
+      @media (min-width: $sm) {
+        top: 250px;
+        right: 20px;
+      }
+      @media (min-width: $md) {
+        top: 350px;
+        right: 0;
+      }
+    }
+
+    &.vietnam {
+      top: 280px;
+      right: 70px;
+      @media (min-width: $sm) {
+        top: 360px;
+        right: 130px;
+      }
+      @media (min-width: $md) {
+        top: 500px;
+        right: 210px;
+      }
+    }
+
+    &.russia {
+      top: 32px;
+      left: 90px;
+      @media (min-width: $sm) {
+        top: 60px;
+        left: 190px;
+      }
+      @media (min-width: $md) {
+        top: 500px;
+        left: 210px;
+      }
+    }
+
+    &.georgia {
+      top: 90px;
+      left: 0;
+      @media (min-width: $sm) {
+        top: 250px;
+        left: 20px;
+      }
+      @media (min-width: $md) {
+        top: 350px;
+        left: 0;
+      }
+    }
+
+    &.saudia {
+      top: 280px;
+      left: 70px;
+      @media (min-width: $sm) {
+        top: 360px;
+        left: 130px;
+      }
+      @media (min-width: $md) {
+        top: 90px;
+        left: 290px;
+      }
     }
   }
 

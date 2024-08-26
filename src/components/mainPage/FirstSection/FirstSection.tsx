@@ -1,29 +1,56 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
-import { Button, Container, Modal, Text } from 'components/ui'
+import { useWindowSize } from 'hooks'
+import { Button, Container, Lottie, Modal, Text } from 'components/ui'
 import IconCarousel from './IconCarousel'
 import DownloadAppModal from './DownloadAppModal'
 import styles from './first-section.module.scss'
+import turkishPeople from 'assets/images/people/turkish.png'
+import chinaPeople from 'assets/images/people/china.png'
+import vietnamPeople from 'assets/images/people/vietnam.png'
+import russiaPeople from 'assets/images/people/russia.png'
+import georgiaPeople from 'assets/images/people/georgia.png'
+import saudiaPeople from 'assets/images/people/saudia.png'
 
 const FirstSection = () => {
   const [showModal, setShowModal] = useState(false)
+  const { deviceWidth } = useWindowSize()
 
   return (
     <div className={styles['first-section-wrapper']}>
       <Container>
         <div className={styles['first-section']}>
           <div className={styles['first-section__main-info']}>
-            <Text as='h1' align='center' family='secondary'>
-              Самая мгновенная и надёжная доставка посылок и документов через границу России
+            <Text
+              as='h1'
+              align='center'
+              family='secondary'
+              whiteSpace={deviceWidth === 'small' ? 'pre-line' : 'initial'}
+            >
+              {`Самая мгновенная\nи надёжная доставка посылок\nи документов через границу России`}
             </Text>
-            <Text as='p' align='center' className={cx('offset-top-32', styles.description)}>
-              Первый в России сервис чемодан–шеринга: сообщество взаимопомощи по доставке посылок через границы
+            <Text
+              as='p'
+              align='center'
+              size='lg'
+              className={cx('offset-top-32', styles.description)}
+              whiteSpace={deviceWidth === 'small' ? 'pre-line' : 'initial'}
+            >
+              {`Первый в России сервис чемодан–шеринга:\nсообщество взаимопомощи по доставке\nпосылок через границы`}
             </Text>
-            <Button className='offset-top-44' onClick={() => setShowModal(true)}>Скачать приложение</Button>
+            <Button className='offset-top-80 offset-sm-top-32 offset-md-top-44' onClick={() => setShowModal(true)}>Скачать приложение</Button>
           </div>
           <div className={styles['first-section__carousel']}>
             <IconCarousel />
           </div>
+
+          <img src={turkishPeople} className={cx(styles['first-section__people'], styles.turkish)} />
+          <img src={chinaPeople} className={cx(styles['first-section__people'], styles.china)} />
+          <img src={vietnamPeople} className={cx(styles['first-section__people'], styles.vietnam)} />
+          <img src={russiaPeople} className={cx(styles['first-section__people'], styles.russia)} />
+          <img src={georgiaPeople} className={cx(styles['first-section__people'], styles.georgia)} />
+          <img src={saudiaPeople} className={cx(styles['first-section__people'], styles.saudia)} />
+          <Lottie className={styles['first-section__animation']} path='https://lottie.host/f2ad24ba-9db1-4918-aeff-98f14daa994e/uk5qllvjOS.json' />
         </div>
       </Container>
 

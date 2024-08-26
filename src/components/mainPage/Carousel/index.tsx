@@ -70,7 +70,7 @@ const Carousel = () => {
             // loop
           >
             {textSlidersContent.map((v) => (
-              <SwiperSlide>
+              <SwiperSlide key={v.title}>
                 <Text as='h2'>{v.title}</Text>
                 <Text as='p' size='lg' className='offset-top-16 offset-sm-top-24'>
                   {v?.content}
