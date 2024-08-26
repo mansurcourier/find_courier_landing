@@ -1,16 +1,22 @@
-import { Carousel, Footer } from "../components";
+import React from 'react'
+import {
+  Calculator,
+  Carousel,
+  CourierAdvantages,
+  DownloadApp,
+  FirstSection,
+  SenderAdvantages
+} from 'components/mainPage'
 
-const Home = () => {
-  return (
-    <>
-      <main className="main">
-        <div className="container">
-          <Carousel />
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <FirstSection />
+    <Carousel />
+    <Calculator />
+    <SenderAdvantages />
+    <CourierAdvantages />
+    <DownloadApp />
+  </>
+)
 
-export default Home;
+export default Home

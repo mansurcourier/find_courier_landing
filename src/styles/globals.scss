@@ -1,0 +1,28 @@
+@import "normalize";
+@import "fonts";
+@import "variables";
+@import "media";
+@import "reset";
+@import './icons/style.css';
+@import 'src/components/ui/icon/icon.scss';
+@import 'src/components/ui/grid/grid.scss';
+@import 'src/components/ui/select/select.scss';
+@import 'src/components/ui/modal/modal.scss';
+
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Object Sans", serif;
+  font-weight: 400;
+  background: #ffffff;
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: default;
+}

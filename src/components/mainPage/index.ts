@@ -1,0 +1,6 @@
+export { default as Carousel } from './Carousel'
+export * from './FirstSection'
+export * from './Calculator'
+export * from './SenderAdvantages'
+export * from './CourierAdvantages'
+export * from './DownloadApp'

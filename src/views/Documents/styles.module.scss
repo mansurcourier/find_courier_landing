@@ -1,0 +1,52 @@
+.docs {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  column-gap: 72px;
+  padding-top: 44px;
+
+  @media (max-width: 567px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-row-gap: 16px;
+
+  &__link {
+    color: var(--color-primary-black);
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+
+  &__link_active {
+    color: var(--color-blue);
+  }
+}
+
+.main {
+  font-size: 12px;
+  line-height: 14px;
+
+  h1 {
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 22px;
+    margin-bottom: 16px;
+  }
+}
