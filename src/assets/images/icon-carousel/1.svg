@@ -2,7 +2,7 @@
 <path d="M30 65C22.5 70 20 77.5 20 82.5C20 90 25 95 30 95" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M45 25C45 19.8 45 12 60 12C75 12 75 19.8 75 25" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M90 65C97.5 70 100 77.5 100 82.5C100 90 95 95 90 95" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
-<path d="M90 95.5C90 103 85 108 77.5 108H42.5C35 108 30 103 30 95.5V50.5C30 33 40 23 60 23C80 23 90 33 90 50.5V95.5Z" fill="#E2DEFF" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
+<path d="M90 95.5C90 103 85 108 77.5 108H42.5C35 108 30 103 30 95.5V50.5C30 33 40 23 60 23C80 23 90 33 90 50.5V95.5Z" fill="white" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M80 80V87.2C80 89.84 77.75 92 75 92H45C42.25 92 40 89.84 40 87.2V80" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M80 75V67.5C80 66.125 78.875 65 77.5 65H42.5C41.125 65 40 66.125 40 67.5V75H80Z" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M70 75V82.5" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>

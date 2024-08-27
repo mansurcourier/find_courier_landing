@@ -5,8 +5,8 @@
 <path d="M40 75.125C44.15 75.125 47.5 78.475 47.5 82.625C47.5 86.775 44.15 90.125 40 90.125" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M40 52.625C44.15 52.625 47.5 55.975 47.5 60.125C47.5 64.275 44.15 67.625 40 67.625" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M40 30.125C44.15 30.125 47.5 33.475 47.5 37.625C47.5 41.775 44.15 45.125 40 45.125" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
-<path d="M100 100.125L97.5 82.6252V20.1252C97.5 15.1002 90 15.1002 90 20.1252V82.6252L87.5 100.125V102.625H100V100.125Z" fill="#E2DEFF" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
+<path d="M100 100.125L97.5 82.6252V20.1252C97.5 15.1002 90 15.1002 90 20.1252V82.6252L87.5 100.125V102.625H100V100.125Z" fill="white" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M90 82.625H97.5" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M40 22.625H75C76.375 22.625 77.5 23.75 77.5 25.125V95.125C77.5 96.5 76.375 97.625 75 97.625H40" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
-<path d="M31.9 12.6248L35 12.5498V107.7L31.9 107.625L20.85 97.8248C20.325 97.3498 20 96.6748 20 95.9498V24.2998C20 23.5748 20.3 22.8998 20.85 22.4248L31.9 12.6248Z" fill="#E2DEFF" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
+<path d="M31.9 12.6248L35 12.5498V107.7L31.9 107.625L20.85 97.8248C20.325 97.3498 20 96.6748 20 95.9498V24.2998C20 23.5748 20.3 22.8998 20.85 22.4248L31.9 12.6248Z" fill="white" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 </svg>
