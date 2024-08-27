@@ -212,8 +212,12 @@
 
     .apps {
       display: flex;
-      column-gap: 100px;
+      column-gap: 50px;
       justify-content: center;
+      flex-wrap: wrap;
+      @media (min-width: $sm) {
+        column-gap: 100px;
+      }
 
       &__item {
         display: flex;
