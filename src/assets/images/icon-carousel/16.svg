@@ -2,6 +2,6 @@
 <path d="M37.5 102.5H82.5" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M42.5 102.5C50 97.5 50 90 50 82.5" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M77.5 102.5C70 97.5 70 90 70 82.5" stroke="#ACAFFF" stroke-width="4" stroke-miterlimit="10"/>
-<path d="M105 17.5H15C13.6193 17.5 12.5 18.6193 12.5 20V80C12.5 81.3807 13.6193 82.5 15 82.5H105C106.381 82.5 107.5 81.3807 107.5 80V20C107.5 18.6193 106.381 17.5 105 17.5Z" fill="#E2DEFF" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
+<path d="M105 17.5H15C13.6193 17.5 12.5 18.6193 12.5 20V80C12.5 81.3807 13.6193 82.5 15 82.5H105C106.381 82.5 107.5 81.3807 107.5 80V20C107.5 18.6193 106.381 17.5 105 17.5Z" fill="white" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 <path d="M12.5 72.5H107.5" stroke="#4833F5" stroke-width="4" stroke-miterlimit="10"/>
 </svg>
