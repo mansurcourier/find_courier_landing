@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { useMutation } from '@tanstack/react-query'
+import React, { useState } from 'react'
+import { Controller, useForm, useWatch } from 'react-hook-form'
+import { isAndroid, isIOS, isBrowser } from 'react-device-detect'
+import { useQuery } from '@tanstack/react-query'
 import cx from 'classnames'
 import { $api } from 'http/axios'
-import { useWindowSize } from 'hooks'
-import { Button, Container, Input, Col, Row, Select, Text } from 'components/ui'
+import { APP_STORE_LINK, GOOGLE_PLAY_LINK } from 'constants/const'
+import { useDebounce, useWindowSize } from 'hooks'
+import { Button, Container, Input, Col, Row, Select, Text, Modal } from 'components/ui'
+import DownloadAppModal from '../FirstSection/DownloadAppModal'
 import styles from './calculator.module.scss'
 
 interface IFormValues {
@@ -28,7 +31,7 @@ const countries: ICountry[] = [
 ]
 
 const Calculator = () => {
-  const [approximateCost, setApproximateCost] = useState(0)
+  const [showModal, setShowModal] = useState(false)
   const [fromSelectOption] = useState<ICountry[]>(countries)
   const [destinationSelectOption, setDestinationSelectOption] = useState<ICountry[]>(
     countries.filter((v) => v.key !== countries[0].key)
@@ -41,7 +44,6 @@ const Calculator = () => {
   }
 
   const {
-    handleSubmit,
     control,
     register,
     setError,
@@ -49,6 +51,7 @@ const Calculator = () => {
     setValue,
     formState: { errors }
   } = useForm<IFormValues>({
+    mode: 'onChange',
     defaultValues: {
       from: countries[0].key,
       destination: 'turkey',
@@ -59,15 +62,11 @@ const Calculator = () => {
     }
   })
 
-  const { mutate: sendForm, isPending } = useMutation({
-    mutationFn: async (formData: Record<string, string>) => {
-      return await $api.get(`/v1/cargo?${new URLSearchParams(formData).toString()}`)
-    },
-    onSuccess: (response: any) => setApproximateCost(response?.data?.data ?? 0),
-    onError: () => setApproximateCost(0)
-  })
-
   const prepareData = (data: IFormValues) => {
+    if (data.destination === data.from) {
+      return setError('destination', { message: 'Страны не должны совпадать' })
+    }
+
     const copyData = JSON.parse(JSON.stringify(data))
 
     Object.keys(copyData).forEach((name) => {
@@ -82,7 +81,24 @@ const Calculator = () => {
     return copyData
   }
 
-  const fromCountryChange = (data: any) => {
+  const watchForm = useWatch({ control })
+  const debouncedValue = useDebounce<string>(watchForm as any, 300)
+
+  const { data: approximateCost } = useQuery({
+    queryKey: ['getProducts', debouncedValue],
+    queryFn: async () => {
+      const {
+        data,
+        status
+      } = await $api.get(`/v1/cargo?${new URLSearchParams(prepareData(debouncedValue as any)).toString()}`)
+      return status === 200 ? data.data : 0
+    },
+    retry: 1,
+    placeholderData: (prev) => prev,
+    refetchOnWindowFocus: false
+  })
+
+  const fromCountryChange = (data: string) => {
     if (data !== 'russia') {
       setDestinationSelectOption([countries[0]])
 
@@ -97,17 +113,11 @@ const Calculator = () => {
     setValue('destination', 'turkey')
   }
 
-  const onSubmit = (data: IFormValues) => {
-    if (data.destination === data.from) {
-      return setError('destination', { message: 'Страны не должны совпадать' })
-    }
-
-    sendForm(prepareData(data) as unknown as Record<string, string>)
+  const onOpenDownloadModal = () => {
+    if (isBrowser) return setShowModal(true)
+    if (!isAndroid) window.open(APP_STORE_LINK, '_blank')
+    if (!isIOS) window.open(GOOGLE_PLAY_LINK, '_blank')
   }
-
-  useEffect(() => {
-    sendForm(prepareData(getValues()) as unknown as Record<string, string>)
-  }, [])
 
   return (
     <Container className='offset-top-92 offset-lg-top-80'>
@@ -132,7 +142,7 @@ const Calculator = () => {
           </Text>
         </div>
         <div className={styles.right}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form>
             <Row row={16}>
               <Col xs={6}>
                 <Controller
@@ -238,16 +248,20 @@ const Calculator = () => {
                   Примерная стоимость
                 </Text>
                 <Text as='p' className={styles['calculate-delivery__cost']} color='blue' family='secondary'>
-                  {approximateCost} ₽
+                  {approximateCost ?? 0} ₽
                 </Text>
               </div>
-              <Button type='submit' disabled={isPending} fluid={deviceWidth === 'small'}>
+              <Button fluid={deviceWidth === 'small'} onClick={onOpenDownloadModal}>
                 Добавить заявку в приложении
               </Button>
             </div>
           </form>
         </div>
       </div>
+
+      <Modal isOpen={showModal} onRequestClose={() => setShowModal(false)}>
+        <DownloadAppModal />
+      </Modal>
     </Container>
   )
 }
