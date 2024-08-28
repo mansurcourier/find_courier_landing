@@ -12,31 +12,58 @@
   }
 
   &__main-info {
-    padding: 120px 0 32px;
     display: flex;
     align-items: center;
     flex-direction: column;
     max-width: 468px;
+    height: 326px;
+    margin: 32px 24px;
     width: 100%;
     position: relative;
     z-index: 1;
     @media (min-width: $sm) {
-      padding: 140px 0 72px;
+      max-width: 635px;
+      height: 337px;
+      margin: 54px 61px;
     }
     @media (min-width: $md) {
-      padding: 196px 0 100px;
-      max-width: 750px
+      max-width: 880px;
+      height: 451px;
+      margin: 90px 72px;
     }
     @media (min-width: $lg) {
-      max-width: 900px;
+      max-width: 980px;
+      height: 502px;
+      margin: 65px 0;
+    }
+
+    .title {
+      z-index: 1;
+      margin-top: 88px;
+      @media (min-width: $sm) {
+        margin-top: 86px;
+        max-width: 465px;
+      }
+      @media (min-width: $md) {
+        margin-top: 106px;
+        max-width: 100%;
+      }
+      @media (min-width: $lg) {
+        margin-top: 132px;
+      }
     }
 
     .description {
+      z-index: 1;
       max-width: 535px;
       @media (min-width: $md) {
         font-size: 20px;
         line-height: 26px;
       }
+    }
+
+    .button {
+      z-index: 1;
     }
   }
 
@@ -61,80 +88,88 @@
     }
 
     &.turkish {
-      top: 32px;
-      right: 90px;
+      top: 0;
+      right: 85px;
       @media (min-width: $sm) {
-        top: 60px;
-        right: 190px;
+        right: 145px;
       }
       @media (min-width: $md) {
-        top: 90px;
-        right: 290px;
+        right: 215px;
+      }
+      @media (min-width: $lg) {
+        right: 240px;
       }
     }
 
     &.china {
-      top: 90px;
+      top: 55px;
       right: 0;
       @media (min-width: $sm) {
-        top: 250px;
-        right: 20px;
+        top: 185px;
       }
       @media (min-width: $md) {
-        top: 350px;
-        right: 0;
+        top: 250px;
+      }
+      @media (min-width: $lg) {
+        top: 280px;
       }
     }
 
     &.vietnam {
-      top: 280px;
-      right: 70px;
+      bottom: 65px;
+      right: 65px;
       @media (min-width: $sm) {
-        top: 360px;
-        right: 130px;
+        bottom: 0;
+        right: 100px;
       }
       @media (min-width: $md) {
-        top: 500px;
-        right: 210px;
+        right: 140px;
+      }
+      @media (min-width: $lg) {
+        right: 150px;
       }
     }
 
     &.russia {
-      top: 32px;
-      left: 90px;
+      bottom: 65px;
+      left: 65px;
       @media (min-width: $sm) {
-        top: 60px;
-        left: 190px;
+        bottom: 0;
+        left: 100px;
       }
       @media (min-width: $md) {
-        top: 500px;
-        left: 210px;
+        left: 140px;
+      }
+      @media (min-width: $lg) {
+        left: 150px;
       }
     }
 
     &.georgia {
-      top: 90px;
+      top: 55px;
       left: 0;
       @media (min-width: $sm) {
-        top: 250px;
-        left: 20px;
+        top: 185px;
       }
       @media (min-width: $md) {
-        top: 350px;
-        left: 0;
+        top: 250px;
+      }
+      @media (min-width: $lg) {
+        top: 280px;
       }
     }
 
     &.saudia {
-      top: 280px;
-      left: 70px;
+      top: 0;
+      left: 85px;
       @media (min-width: $sm) {
-        top: 360px;
-        left: 130px;
+        left: 145px;
       }
       @media (min-width: $md) {
-        top: 90px;
-        left: 290px;
+        left: 215px;
+      }
+      @media (min-width: $lg) {
+        left: 240px;
       }
     }
   }

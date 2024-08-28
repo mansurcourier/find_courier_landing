@@ -10,7 +10,7 @@ function FormError({ message }: IFormError) {
   return (
     <>
       {message && (
-        <Text as='p' color='red' weight='regular' size='xs' className={s['error-message']}>
+        <Text as='p' color='red' weight='regular' className={s['error-message']}>
           {message}
         </Text>
       )}

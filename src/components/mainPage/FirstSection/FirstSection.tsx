@@ -26,6 +26,7 @@ const FirstSection = () => {
               align='center'
               family='secondary'
               whiteSpace={deviceWidth === 'small' ? 'pre-line' : 'initial'}
+              className={styles.title}
             >
               {`Самая мгновенная\nи надёжная доставка посылок\nи документов через границу России`}
             </Text>
@@ -33,24 +34,24 @@ const FirstSection = () => {
               as='p'
               align='center'
               size='lg'
-              className={cx('offset-top-32', styles.description)}
+              className={cx('offset-top-12 offset-sm-top-24 offset-md-top-32', styles.description)}
               whiteSpace={deviceWidth === 'small' ? 'pre-line' : 'initial'}
             >
               {`Первый в России сервис чемодан–шеринга:\nсообщество взаимопомощи по доставке\nпосылок через границы`}
             </Text>
-            <Button className='offset-top-80 offset-sm-top-32 offset-md-top-44' onClick={() => setShowModal(true)}>Скачать приложение</Button>
+            <Button className={cx('offset-top-80 offset-sm-top-32 offset-md-top-44', styles.button)} onClick={() => setShowModal(true)}>Скачать приложение</Button>
+
+            <img src={turkishPeople} className={cx(styles['first-section__people'], styles.turkish)} alt='' />
+            <img src={chinaPeople} className={cx(styles['first-section__people'], styles.china)} alt='' />
+            <img src={vietnamPeople} className={cx(styles['first-section__people'], styles.vietnam)} alt='' />
+            <img src={russiaPeople} className={cx(styles['first-section__people'], styles.russia)} alt='' />
+            <img src={georgiaPeople} className={cx(styles['first-section__people'], styles.georgia)} alt='' />
+            <img src={saudiaPeople} className={cx(styles['first-section__people'], styles.saudia)} alt='' />
+            <Lottie className={styles['first-section__animation']} path='https://lottie.host/f2ad24ba-9db1-4918-aeff-98f14daa994e/uk5qllvjOS.json' />
           </div>
           <div className={styles['first-section__carousel']}>
             <IconCarousel />
           </div>
-
-          <img src={turkishPeople} className={cx(styles['first-section__people'], styles.turkish)} />
-          <img src={chinaPeople} className={cx(styles['first-section__people'], styles.china)} />
-          <img src={vietnamPeople} className={cx(styles['first-section__people'], styles.vietnam)} />
-          <img src={russiaPeople} className={cx(styles['first-section__people'], styles.russia)} />
-          <img src={georgiaPeople} className={cx(styles['first-section__people'], styles.georgia)} />
-          <img src={saudiaPeople} className={cx(styles['first-section__people'], styles.saudia)} />
-          <Lottie className={styles['first-section__animation']} path='https://lottie.host/f2ad24ba-9db1-4918-aeff-98f14daa994e/uk5qllvjOS.json' />
         </div>
       </Container>
 
