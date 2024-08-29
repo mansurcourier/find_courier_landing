@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, FreeMode } from 'swiper/modules'
 import icon1 from 'assets/images/icon-carousel/1.svg'
@@ -44,7 +45,7 @@ const IconCarousel = () => {
         delay: 0,
         disableOnInteraction: false
       }}
-      speed={5000}
+      speed={2500}
       breakpoints={{
         320: {
           slidesPerView: 5,
@@ -79,6 +80,8 @@ const IconCarousel = () => {
           <img src={sliders[i].icon as string} className={styles.image} style={{ ...sliders[i].style }} alt='icon' />
         </SwiperSlide>
       ))}
+      <div className={cx(styles['icon-carousel__shadow'], styles.left)} />
+      <div className={cx(styles['icon-carousel__shadow'], styles.right)} />
     </Swiper>
   )
 }

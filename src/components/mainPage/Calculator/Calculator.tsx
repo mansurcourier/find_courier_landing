@@ -248,7 +248,7 @@ const Calculator = () => {
                   Примерная стоимость
                 </Text>
                 <Text as='p' className={styles['calculate-delivery__cost']} color='blue' family='secondary'>
-                  {approximateCost ?? 0} $
+                  {approximateCost?.toFixed(2) ?? 0} $
                 </Text>
               </div>
               <Button fluid={deviceWidth === 'small'} onClick={onOpenDownloadModal}>

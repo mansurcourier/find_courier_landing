@@ -221,6 +221,24 @@
       }
     }
   }
+
+  &__shadow {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    &.left {
+      @media (min-width: $xs) {
+        box-shadow: 30px 0 20px 0 rgb(247 248 252) inset;
+      }
+    }
+
+    &.right {
+      @media (min-width: $xs) {
+        box-shadow: -30px 0 20px 0 rgb(247 248 252) inset;
+      }
+    }
+  }
 }
 
 
