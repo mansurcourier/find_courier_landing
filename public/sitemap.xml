@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://findcourier.ru</loc>
+        <lastmod>2024-08-28T13:12:43.196Z</lastmod>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://findcourier.ru/docs</loc>
+        <lastmod>2024-08-28T13:12:43.196Z</lastmod>
+        <priority>0.5</priority>
+    </url>
+</urlset>
