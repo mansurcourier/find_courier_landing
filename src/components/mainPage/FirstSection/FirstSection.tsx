@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
 import { useWindowSize } from 'hooks'
+import { LOTTIE_ANIMATION_DESKTOP, LOTTIE_ANIMATION_MOBILE } from 'constants/const'
 import { Button, Container, Lottie, Modal, Text } from 'components/ui'
 import IconCarousel from './IconCarousel'
 import DownloadAppModal from './DownloadAppModal'
@@ -47,7 +48,10 @@ const FirstSection = () => {
             <img src={russiaPeople} className={cx(styles['first-section__people'], styles.russia)} alt='' />
             <img src={georgiaPeople} className={cx(styles['first-section__people'], styles.georgia)} alt='' />
             <img src={saudiaPeople} className={cx(styles['first-section__people'], styles.saudia)} alt='' />
-            <Lottie className={styles['first-section__animation']} path='https://lottie.host/f2ad24ba-9db1-4918-aeff-98f14daa994e/uk5qllvjOS.json' />
+            <Lottie
+              className={styles['first-section__animation']}
+              path={deviceWidth === 'small' ? LOTTIE_ANIMATION_MOBILE : LOTTIE_ANIMATION_DESKTOP}
+            />
           </div>
           <div className={styles['first-section__carousel']}>
             <IconCarousel />
