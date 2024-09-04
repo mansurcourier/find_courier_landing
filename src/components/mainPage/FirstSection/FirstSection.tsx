@@ -40,7 +40,12 @@ const FirstSection = () => {
             >
               {`Первый в России сервис чемодан–шеринга:\nсообщество взаимопомощи по доставке\nпосылок через границы`}
             </Text>
-            <Button className={cx('offset-top-80 offset-sm-top-32 offset-md-top-44', styles.button)} onClick={() => setShowModal(true)}>Скачать приложение</Button>
+            <Button
+              className={cx('offset-xs-top-80 offset-sm-top-32 offset-md-top-44', styles.button)}
+              onClick={() => setShowModal(true)}
+            >
+              Скачать приложение
+            </Button>
 
             <img src={turkishPeople} className={cx(styles['first-section__people'], styles.turkish)} alt='' />
             <img src={chinaPeople} className={cx(styles['first-section__people'], styles.china)} alt='' />
