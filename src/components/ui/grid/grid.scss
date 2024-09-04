@@ -239,6 +239,14 @@ $breakpoints: (
   }
 }
 
+@media (min-width: $xs) {
+  .offset-xs {
+    &-top-80 {
+      margin-top: 80px;
+    }
+  }
+}
+
 @media (min-width: $sm) {
   .offset-sm {
     &-top-16 {

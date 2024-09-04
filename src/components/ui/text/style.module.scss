@@ -6,8 +6,12 @@
   line-height: 22px;
 
   &.text-xxl {
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 5vw;
+    line-height: 5.58vw;
+    @media (min-width: $xs) {
+      font-size: 18px;
+      line-height: 20px;
+    }
     @media (min-width: $sm) {
       font-size: 22px;
       line-height: 25px;
@@ -23,8 +27,12 @@
   }
 
   &.text-xl {
-    font-size: 24px;
-    line-height: 27px;
+    font-size: 6.4vw;
+    line-height: 7.4vw;
+    @media (min-width: $xs) {
+      font-size: 24px;
+      line-height: 27px;
+    }
     @media (min-width: $sm) {
       font-size: 28px;
       line-height: 32px;
@@ -32,8 +40,12 @@
   }
 
   &.text-lg {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 3.2vw;
+    line-height: 4.5vw;
+    @media (min-width: $xs) {
+      font-size: 12px;
+      line-height: 16px;
+    }
     @media (min-width: $sm) {
       font-size: 16px;
       line-height: 20px;
@@ -53,22 +65,18 @@
     //}
   }
 
-    &.text-sm {
-    font-size: 14px;
-    line-height: 16px;
-    //@media (min-width: $sm) {
-    //  font-size: 14px;
-    //  line-height: 16px;
-    //}
+  &.text-sm {
+    font-size: 3.7vw;
+    line-height: 4.1vw;
+    @media (min-width: $xs) {
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 
   &.text-xs {
     font-size: 13px;
     line-height: 20px;
-    //@media (min-width: $sm) {
-    //  font-size: 14px;
-    //  line-height: 14px;
-    //}
   }
 
   &.text-xxs {
@@ -80,13 +88,13 @@
 h1 {
   &.text {
     font-family: var(--font-secondary);
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 5vw;
+    line-height: 5.58vw;
     font-weight: 500;
-    //@media (min-width: $sm) {
-    //  font-size: 26px;
-    //  line-height: 32px;
-    //}
+    @media (min-width: $xs) {
+      font-size: 18px;
+      line-height: 20px;
+    }
     @media (min-width: $sm) {
       font-size: 30px;
       line-height: 32px;
@@ -105,13 +113,13 @@ h1 {
 h2 {
   &.text {
     font-family: var(--font-secondary);
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 4.8vw;
+    line-height: 5.9vw;
     font-weight: 500;
-    //@media (min-width: $sm) {
-    //  font-size: 26px;
-    //  line-height: 26px;
-    //}
+    @media (min-width: $xs) {
+      font-size: 18px;
+      line-height: 22px;
+    }
     @media (min-width: $sm) {
       font-size: 30px;
       line-height: 32px;

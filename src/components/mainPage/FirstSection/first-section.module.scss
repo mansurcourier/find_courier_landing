@@ -15,12 +15,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 320px;
-    height: 326px;
     margin: 32px 24px;
     width: 100%;
     position: relative;
     z-index: 1;
+    @media (min-width: $xs) {
+      max-width: 320px;
+      height: 326px;
+    }
     @media (min-width: $sm) {
       max-width: 635px;
       height: 337px;
@@ -39,7 +41,10 @@
 
     .title {
       z-index: 1;
-      margin-top: 88px;
+      margin-top: 24vw;
+      @media (min-width: $xs) {
+        margin-top: 88px;
+      }
       @media (min-width: $sm) {
         margin-top: 86px;
         max-width: 465px;
@@ -64,12 +69,16 @@
 
     .button {
       z-index: 1;
+      @media (max-width: $xs) {
+        margin-top: 21vw;
+      }
     }
   }
 
   &__animation {
     position: absolute;
     top: 0;
+    width: 100%;
     @media (min-width: $sm) {
       inset: 0;
     }
@@ -78,8 +87,11 @@
   &__people {
     position: absolute;
     z-index: 1;
-    width: 38px;
+    width: 10.5vw;
     height: auto;
+    @media (min-width: $xs) {
+      width: 38px;
+    }
     @media (min-width: $sm) {
       width: 45px;
     }
@@ -92,7 +104,10 @@
 
     &.turkish {
       top: 0;
-      right: 85px;
+      right: 27%;
+      @media (min-width: $xs) {
+        right: 85px;
+      }
       @media (min-width: $sm) {
         right: 145px;
       }
@@ -105,8 +120,11 @@
     }
 
     &.china {
-      top: 55px;
       right: 0;
+      top: 17%;
+      @media (min-width: $xs) {
+        top: 55px;
+      }
       @media (min-width: $sm) {
         top: 185px;
       }
@@ -119,8 +137,18 @@
     }
 
     &.vietnam {
-      bottom: 65px;
-      right: 65px;
+      right: 17vw;
+      bottom: 18%;
+      @media (min-width: 400px) {
+        bottom: 15%;
+      }
+      @media (min-width: 500px) {
+        bottom: 12%;
+      }
+      @media (min-width: $xs) {
+        bottom: 65px;
+        right: 65px;
+      }
       @media (min-width: $sm) {
         bottom: 0;
         right: 100px;
@@ -134,8 +162,18 @@
     }
 
     &.russia {
-      bottom: 65px;
-      left: 65px;
+      left: 17vw;
+      bottom: 18%;
+      @media (min-width: 400px) {
+        bottom: 15%;
+      }
+      @media (min-width: 500px) {
+        bottom: 12%;
+      }
+      @media (min-width: $xs) {
+        bottom: 65px;
+        left: 65px;
+      }
       @media (min-width: $sm) {
         bottom: 0;
         left: 100px;
@@ -149,8 +187,11 @@
     }
 
     &.georgia {
-      top: 55px;
       left: 0;
+      top: 17%;
+      @media (min-width: $xs) {
+        top: 55px;
+      }
       @media (min-width: $sm) {
         top: 185px;
       }
@@ -164,7 +205,10 @@
 
     &.saudia {
       top: 0;
-      left: 85px;
+      left: 27%;
+      @media (min-width: $xs) {
+        left: 85px;
+      }
       @media (min-width: $sm) {
         left: 145px;
       }

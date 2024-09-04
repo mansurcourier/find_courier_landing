@@ -2,8 +2,8 @@
 
 .button {
   font-family: var(--font-primary);
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 3.2vw;
+  line-height: 3.5vw;
   transition: all 200ms linear;
   transition-property: color, background-color, box-shadow, border-color;
   display: block;
@@ -16,6 +16,10 @@
   border-radius: 30px;
   padding: 13px 16px;
   font-weight: 500;
+  @media (min-width: $xs) {
+    font-size: 12px;
+    line-height: 14px;
+  }
   @media (min-width: $sm) {
     padding: 13px 24px;
     font-size: 16px;
