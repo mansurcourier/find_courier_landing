@@ -7,6 +7,10 @@ import appStoreImg from 'assets/images/app-store.svg'
 import googlePlayImg from 'assets/images/google-play.svg'
 import styles from './download-app.module.scss'
 
+const handleDownload = () => {
+  window.location.href = '/findcourier.apk';
+}
+
 const DownloadApp = () => (
   <div className={cx(styles['download-app-wrapper'], 'offset-top-92 offset-sm-top-150')}>
     <Container>
@@ -21,7 +25,7 @@ const DownloadApp = () => (
             </a>
           )}
           {(!isIOS || isBrowser) && (
-            <a href={GOOGLE_PLAY_LINK} target='_blank' className={styles.link}>
+            <a onClick={handleDownload} target='_blank' className={styles.link}>
               <img src={googlePlayImg as string} alt='google-play' />
             </a>
           )}
