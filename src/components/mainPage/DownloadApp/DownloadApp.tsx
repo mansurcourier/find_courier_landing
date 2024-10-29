@@ -22,7 +22,7 @@ const DownloadApp = () => (
           )}
           {(!isIOS || isBrowser) && (
             <a download='findcourier.apk' href='/findcourier.apk' className={styles.link}>
-              <img src={googlePlayImg as string} alt='google-play' />
+              <img src={googlePlayImg as string} alt='google-play-app' />
             </a>
           )}
         </div>
