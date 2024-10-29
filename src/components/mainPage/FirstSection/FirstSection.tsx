@@ -12,6 +12,8 @@ import vietnamPeople from 'assets/images/people/vietnam.png'
 import russiaPeople from 'assets/images/people/russia.png'
 import georgiaPeople from 'assets/images/people/georgia.png'
 import saudiaPeople from 'assets/images/people/saudia.png'
+import { isAndroid } from 'react-device-detect'
+import { HashLink } from 'react-router-hash-link'
 
 const FirstSection = () => {
   const [showModal, setShowModal] = useState(false)
@@ -40,12 +42,22 @@ const FirstSection = () => {
             >
               {`Первый в России сервис чемодан–шеринга:\nсообщество взаимопомощи по доставке\nпосылок через границы`}
             </Text>
+            {isAndroid ? (
+            <Button
+            className={cx('offset-xs-top-80 offset-sm-top-32 offset-md-top-44', styles.button)}
+              >
+              <HashLink style={{color: '#fff'}} to={'#download'} smooth>
+                  Скачать приложение
+              </HashLink>
+            </Button>
+            ) : (
             <Button
               className={cx('offset-xs-top-80 offset-sm-top-32 offset-md-top-44', styles.button)}
               onClick={() => setShowModal(true)}
             >
               Скачать приложение
             </Button>
+            )}
 
             <img src={turkishPeople} className={cx(styles['first-section__people'], styles.turkish)} alt='' />
             <img src={chinaPeople} className={cx(styles['first-section__people'], styles.china)} alt='' />
