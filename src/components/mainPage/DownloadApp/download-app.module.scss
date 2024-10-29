@@ -20,6 +20,27 @@
       padding: 64px 0;
     }
   }
+  &-loading {
+    opacity: 50%;
+    cursor: progress !important;
+    position: relative;
+    &::after {
+      content: "";
+      width: 34px;
+      height: 34px;
+      position: absolute;
+      top: 6px;
+      left: calc(50% - 17px);
+      background: transparent;
+      box-sizing: border-box;
+      border-top: 4px solid white;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-radius: 100%;
+      animation: spin 0.6s ease-out infinite;
+    }
+  }
 
   &__buttons {
     margin-top: 24px;
@@ -28,10 +49,13 @@
     @media (min-width: $sm) {
       margin-top: 32px;
     }
-
     .link {
       cursor: pointer;
       display: flex;
     }
   }
+}
+
+@keyframes spin {
+	100% {transform: rotate(360deg)}
 }

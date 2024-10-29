@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import { Modal, Text } from 'components/ui'
 import { DownloadAppModal } from 'components/mainPage/FirstSection'
 import styles from "./styles.module.scss";
-
+import { isAndroid } from 'react-device-detect';
 interface IMenuLink {
   text: string
   link: string
@@ -32,10 +32,18 @@ const MenuLinks = () => {
           </Text>
         </HashLink>
       ))}
-      <Text size='md' className={styles['menu-links__text']} onClick={() => setShowModal(true)}>
-        Скачать
-      </Text>
-
+      
+      {isAndroid ? (
+        <HashLink to={'#download'} smooth>
+          <Text size='md' className={styles['menu-links__text']}>
+              Скачать
+          </Text>
+        </HashLink>
+      ) : (
+        <Text size='md' className={styles['menu-links__text']} onClick={() => setShowModal(true)}>
+          Скачать
+        </Text>
+      )}    
       <Modal isOpen={showModal} onRequestClose={() => setShowModal(false)}>
         <DownloadAppModal />
       </Modal>
