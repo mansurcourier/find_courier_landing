@@ -6,6 +6,18 @@ import { Container, Text } from 'components/ui'
 import appStoreImg from 'assets/images/app-store.svg'
 import googlePlayImg from 'assets/images/google-play.svg'
 import styles from './download-app.module.scss'
+import axios from 'axios'
+import fileDownload from "js-file-download";
+
+const handleDownload = () => {
+  axios
+    .get("https://findcourier.ru/public/findcourier.apk", {
+      responseType: "blob",
+    })
+    .then((res) => {
+      fileDownload(res.data, "findourier.apk");
+    });
+};
 
 const DownloadApp = () => (
   <div className={cx(styles['download-app-wrapper'], 'offset-top-92 offset-sm-top-150')}>
@@ -21,9 +33,9 @@ const DownloadApp = () => (
             </a>
           )}
           {(!isIOS || isBrowser) && (
-            <a href="https://findcourier.ru/findcourier.apk" className={styles.link}>
+            <div onClick={handleDownload}  className={styles.link}>
               <img src={googlePlayImg as string} alt='google-play-app' />
-            </a>
+            </div>
           )}
         </div>
       </div>
