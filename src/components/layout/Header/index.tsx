@@ -8,6 +8,8 @@ import SocialLinks from './SocialLinks'
 import MenuLinks from './MenuLinks'
 import styles from './styles.module.scss'
 import logoImg from 'assets/images/logo.svg'
+import { isAndroid } from 'react-device-detect'
+import { HashLink } from 'react-router-hash-link'
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false)
@@ -27,14 +29,22 @@ const Header = () => {
 
   return (
     <div className={styles['header-wrapper']}>
-      <header className={cx(styles.header, { [styles['show-download-button']]: showDownloadButton})}>
+      <header className={cx(styles.header, { [styles['show-download-button']]: showDownloadButton })}>
         <Link to='/'>
           <img className={styles.header__img} src={logoImg as string} alt='logo' />
         </Link>
         {deviceWidth === 'small' ? (
-          <Button className={styles['header__download-button']} onClick={() => setShowModal(true)}>
-            Скачать
-          </Button>
+          isAndroid ? (
+            <Button className={styles['header__download-button']}>
+              <HashLink style={{ color: '#fff' }} to={'#download'} smooth>
+                Скачать
+              </HashLink>
+            </Button>
+          ) : (
+            <Button className={styles['header__download-button']} onClick={() => setShowModal(true)}>
+              Скачать
+            </Button>
+          )
         ) : (
           <>
             <MenuLinks />
