@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import { isAndroid, isIOS, isBrowser } from 'react-device-detect'
-import { APP_STORE_LINK, GOOGLE_PLAY_LINK } from 'constants/const'
+import { APP_STORE_LINK } from 'constants/const'
 import { Container, Text } from 'components/ui'
 import appStoreImg from 'assets/images/app-store.svg'
 import googlePlayImg from 'assets/images/google-play.svg'
@@ -21,7 +21,7 @@ const DownloadApp = () => (
             </a>
           )}
           {(!isIOS || isBrowser) && (
-            <a href={GOOGLE_PLAY_LINK} target='_blank' className={styles.link}>
+            <a download='findcourier.apk' href='/findcourier.apk' className={styles.link}>
               <img src={googlePlayImg as string} alt='google-play' />
             </a>
           )}

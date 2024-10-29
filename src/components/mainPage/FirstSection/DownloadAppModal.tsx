@@ -26,14 +26,14 @@ const DownloadAppModal = () => (
               <img src={appStoreImg as string} alt='app-store' />
             </div>
           )}
-          {(!isIOS || isBrowser) && (
+          {/* {(!isIOS || isBrowser) && (
             <div className={s.apps__item}>
               <Link to={GOOGLE_PLAY_LINK} target='_blank'>
                 <QRCodeSVG value={GOOGLE_PLAY_LINK} bgColor='#FFFFFF' fgColor='#000000' width={150} height={150} />
               </Link>
               <img src={googlePlayImg as string} alt='google-play' />
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
